@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CD55D5AE-BFC0-4D28-BFDE-8EA39DC5930C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QLSV</RootNamespace>
+    <AssemblyName>QLSV</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.3.0.0\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaiTapWinformDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaiTapWinformDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BaiTapWinformDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaiTapWinformDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BaiTapWinformDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaiTapWinformDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Course\AddCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course\AddCourse.Designer.cs">
+      <DependentUpon>AddCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Course\AddCourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course\AddCourseForm.Designer.cs">
+      <DependentUpon>AddCourseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Score\AddScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Score\AddScoreForm.Designer.cs">
+      <DependentUpon>AddScoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Score\AvgScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Score\AvgScore.Designer.cs">
+      <DependentUpon>AvgScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaiTapWinformDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaiTapWinformDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BaiTapWinformDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaiTapWinformDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BaiTapWinformDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaiTapWinformDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BaiTapWinformDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaiTapWinformDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BaiTapWinformDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaiTapWinformDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BaiTapWinformDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaiTapWinformDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Course\Course.cs" />
+    <Compile Include="Course\CourseStdList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course\CourseStdList.Designer.cs">
+      <DependentUpon>CourseStdList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Course\EditCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course\EditCourse.Designer.cs">
+      <DependentUpon>EditCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Course\ManageCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course\ManageCourse.Designer.cs">
+      <DependentUpon>ManageCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Score\ManageScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Score\ManageScore.Designer.cs">
+      <DependentUpon>ManageScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Course\PrintCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course\PrintCourse.Designer.cs">
+      <DependentUpon>PrintCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Course\RemoveCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course\RemoveCourse.Designer.cs">
+      <DependentUpon>RemoveCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Score\RemoveScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Score\RemoveScore.Designer.cs">
+      <DependentUpon>RemoveScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Score\Score.cs" />
+    <Compile Include="Student\AddStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\AddStudentForm.Designer.cs">
+      <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Approve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Approve.Designer.cs">
+      <DependentUpon>Approve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaiTapWinformDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaiTapWinformDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BaiTapWinformDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaiTapWinformDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BaiTapWinformDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaiTapWinformDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BaiTapWinformDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaiTapWinformDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="User\ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\ForgotPassword.Designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\Login_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\Login_Form.Designer.cs">
+      <DependentUpon>Login_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm01.Designer.cs">
+      <DependentUpon>MainForm01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Manage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Manage.Designer.cs">
+      <DependentUpon>Manage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MY_DB.cs" />
+    <Compile Include="Student\Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Print.Designer.cs">
+      <DependentUpon>Print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\SearchNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\SearchNameForm.Designer.cs">
+      <DependentUpon>SearchNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\SignUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\SignUpForm.Designer.cs">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\StaticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\StaticForm.Designer.cs">
+      <DependentUpon>StaticForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\STUDENT.cs" />
+    <Compile Include="Student\StudentListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\StudentListForm.Designer.cs">
+      <DependentUpon>StudentListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\UpdateDeleteStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\UpdateDeleteStudentForm.Designer.cs">
+      <DependentUpon>UpdateDeleteStudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\User.cs" />
+    <EmbeddedResource Include="Course\AddCourse.resx">
+      <DependentUpon>AddCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Course\AddCourseForm.resx">
+      <DependentUpon>AddCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Score\AddScoreForm.resx">
+      <DependentUpon>AddScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Score\AvgScore.resx">
+      <DependentUpon>AvgScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Course\CourseStdList.resx">
+      <DependentUpon>CourseStdList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Course\EditCourse.resx">
+      <DependentUpon>EditCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Course\ManageCourse.resx">
+      <DependentUpon>ManageCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Score\ManageScore.resx">
+      <DependentUpon>ManageScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Course\PrintCourse.resx">
+      <DependentUpon>PrintCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Course\RemoveCourse.resx">
+      <DependentUpon>RemoveCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Score\RemoveScore.resx">
+      <DependentUpon>RemoveScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\AddStudentForm.resx">
+      <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Approve.resx">
+      <DependentUpon>Approve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\Login_Form.resx">
+      <DependentUpon>Login_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm01.resx">
+      <DependentUpon>MainForm01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Manage.resx">
+      <DependentUpon>Manage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Print.resx">
+      <DependentUpon>Print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="User\ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\SearchNameForm.resx">
+      <DependentUpon>SearchNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\SignUpForm.resx">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\StaticForm.resx">
+      <DependentUpon>StaticForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\StudentListForm.resx">
+      <DependentUpon>StudentListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\UpdateDeleteStudentForm.resx">
+      <DependentUpon>UpdateDeleteStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="BaiTapWinformDataSet.xsc">
+      <DependentUpon>BaiTapWinformDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaiTapWinformDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaiTapWinformDataSet.xss">
+      <DependentUpon>BaiTapWinformDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet1.xsc">
+      <DependentUpon>BaiTapWinformDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaiTapWinformDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaiTapWinformDataSet1.xss">
+      <DependentUpon>BaiTapWinformDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet10.xsc">
+      <DependentUpon>BaiTapWinformDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaiTapWinformDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaiTapWinformDataSet10.xss">
+      <DependentUpon>BaiTapWinformDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet11.xsc">
+      <DependentUpon>BaiTapWinformDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaiTapWinformDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaiTapWinformDataSet11.xss">
+      <DependentUpon>BaiTapWinformDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet12.xsc">
+      <DependentUpon>BaiTapWinformDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaiTapWinformDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaiTapWinformDataSet12.xss">
+      <DependentUpon>BaiTapWinformDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet2.xsc">
+      <DependentUpon>BaiTapWinformDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaiTapWinformDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaiTapWinformDataSet2.xss">
+      <DependentUpon>BaiTapWinformDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet3.xsc">
+      <DependentUpon>BaiTapWinformDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaiTapWinformDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaiTapWinformDataSet3.xss">
+      <DependentUpon>BaiTapWinformDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet4.xsc">
+      <DependentUpon>BaiTapWinformDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaiTapWinformDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaiTapWinformDataSet4.xss">
+      <DependentUpon>BaiTapWinformDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet5.xsc">
+      <DependentUpon>BaiTapWinformDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaiTapWinformDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaiTapWinformDataSet5.xss">
+      <DependentUpon>BaiTapWinformDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet6.xsc">
+      <DependentUpon>BaiTapWinformDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaiTapWinformDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaiTapWinformDataSet6.xss">
+      <DependentUpon>BaiTapWinformDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet7.xsc">
+      <DependentUpon>BaiTapWinformDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaiTapWinformDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaiTapWinformDataSet7.xss">
+      <DependentUpon>BaiTapWinformDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet8.xsc">
+      <DependentUpon>BaiTapWinformDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaiTapWinformDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaiTapWinformDataSet8.xss">
+      <DependentUpon>BaiTapWinformDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet9.xsc">
+      <DependentUpon>BaiTapWinformDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaiTapWinformDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaiTapWinformDataSet9.xss">
+      <DependentUpon>BaiTapWinformDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\user.png" />
+    <None Include="Resources\tải xuống.png" />
+    <None Include="Resources\C#.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
