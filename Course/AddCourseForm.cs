@@ -36,17 +36,42 @@ namespace QLSV
         void reloadListBoxData()
         {
             string semester = comboBox1.Text;
-            if (!string.IsNullOrEmpty(semester))
-            {
-                listBox1.DataSource = course.getAllCoursesBySemester(semester);
-                listBox1.ValueMember = "id";
-                listBox1.DisplayMember = "id";
-                listBox1.SelectedItem = null;
-            }
 
             listBox2.DataSource = list;
             listBox2.SelectedItem = null;
+            DataTable filter = new DataTable();
+            filter.Columns.Add("id"); // Thêm cột "id" vào DataTable filter
+            if (!string.IsNullOrEmpty(semester))
+            {
+                DataTable dt = course.getAllCoursesBySemester(semester);
+
+                // Kiểm tra xem DataTable có dữ liệu không
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    // Duyệt qua mỗi dòng trong DataTable
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        // Lấy giá trị của cột "id" từ mỗi dòng
+                        string idValue = row["id"].ToString();
+                        if (!list.Contains(idValue))
+                        {
+                            // Tạo một dòng mới cho DataTable filter và thêm vào DataTable
+                            DataRow newRow = filter.NewRow();
+                            newRow["id"] = idValue;
+                            filter.Rows.Add(newRow);
+                        }
+                        // Sử dụng giá trị idValue ở đây
+
+                    }
+                }
+            }
+            // Sau khi hoàn thành, gán DataTable filter làm nguồn dữ liệu cho listBox1
+            listBox1.DataSource = filter;
+            listBox1.ValueMember = "id";
+            listBox1.DisplayMember = "id";
+            listBox1.SelectedItem = null;
         }
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -61,15 +86,29 @@ namespace QLSV
                 if (rowView != null)
                 {
                     string select = rowView["ID"].ToString();
-                    list.Add(select);
-                    // Loại bỏ khoảng trắng và các chuỗi null
-                    list = RemoveWhitespace(list);
-                    // Cập nhật DataSource của ListBox2
-                    listBox2.DataSource = null;
-                    listBox2.DataSource = list;
+
+                    // Kiểm tra xem mục đã tồn tại trong ListBox2 chưa
+                    if (!list.Contains(select))
+                    {
+                        list.Add(select);
+
+                        // Loại bỏ khoảng trắng và các chuỗi null
+                        list = RemoveWhitespace(list);
+
+                        // Cập nhật DataSource của ListBox2
+                        listBox2.DataSource = null;
+                        listBox2.DataSource = list;
+                        reloadListBoxData();
+                    }
+                    else
+                    {
+                        // Nếu mục đã tồn tại trong ListBox2, bạn có thể hiển thị một thông báo hoặc thực hiện xử lý khác tùy thuộc vào yêu cầu của bạn
+                        MessageBox.Show("Mục đã tồn tại trong danh sách.");
+                    }
                 }
             }
         }
+
 
         private void buttonSave_Click(object sender, EventArgs e)
         {

@@ -31,9 +31,26 @@ namespace QLSV
                     string address = TextBoxAddress.Text;
 
                     // Chuyển đổi hình ảnh thành mảng byte để lưu trong cơ sở dữ liệu
+
                     MemoryStream pictureMemoryStream = new MemoryStream();
+                byte[] picture;
+
+                if (PictureBoxStudentImage.Image != null)
+                {
+                    // Nếu hình ảnh trong PictureBox tồn tại, lưu vào MemoryStream
                     PictureBoxStudentImage.Image.Save(pictureMemoryStream, PictureBoxStudentImage.Image.RawFormat);
-                    byte[] picture = pictureMemoryStream.ToArray();
+                    picture = pictureMemoryStream.ToArray();
+                    // Sử dụng biến picture ở đây cho mục đích khác nếu cần
+                }
+                else
+                {
+                    // Nếu không có hình ảnh, bạn có thể thông báo lỗi hoặc thực hiện xử lý khác tùy thuộc vào yêu cầu của bạn
+                    MessageBox.Show("Không có hình ảnh để lưu.");
+                    picture = null;
+                }
+
+
+
                     int born_year = DateTimePicker1.Value.Year;
                     int this_year = DateTime.Now.Year;
                     //  sv tu 10-100,  co the thay doi
