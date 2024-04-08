@@ -16,26 +16,27 @@ namespace QLSV
     {
         string name;
         string semester;
+        string id;
         public CourseStdList()
         {
             InitializeComponent();
         }
-        public CourseStdList(string name,string semester)
+        public CourseStdList(string name,string semester, string id)
         {
             InitializeComponent();
             this.name = name;
             this.semester = semester;
+            this.id = id;
         }
 
         private void CourseStdList_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'baiTapWinformDataSet11.std' table. You can move, or remove it, as needed.
-            this.stdTableAdapter.Fill(this.baiTapWinformDataSet11.std);
+
             // TODO: This line of code loads data into the 'baiTapWinformDataSet9.std' table. You can move, or remove it, as needed.
             textBoxCourseID.Text = name;
             textBox1.Text = semester;
-            SqlCommand cmd = new SqlCommand("SELECT * FROM std WHERE selected_course LIKE '%' + @name + '%'");
-            cmd.Parameters.AddWithValue("@name", name);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM std WHERE selected_course LIKE '%' + @id + '%'");
+            cmd.Parameters.AddWithValue("@id", id);
             fillGrid(cmd);
         }
         STUDENT student = new STUDENT();
@@ -46,6 +47,16 @@ namespace QLSV
             dataGridView1.DataSource = student.getStudents(command);
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+        }
+
+        private void buttonPrint_Click(object sender, EventArgs e)
+        {
+            printDialog1 = new PrintDialog();
+            printDocument1.DocumentName = " Print Document";
+            printDialog1.Document = printDocument1;
+            printDialog1.AllowSelection = true;
+            printDialog1.AllowSomePages = true;
+            if (printDialog1.ShowDialog() == DialogResult.OK) { printDocument1.Print(); }
         }
     }
 }

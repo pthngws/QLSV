@@ -47,3 +47,4 @@ C:\Users\thang\Searches\source\repos\QLSV\bin\Debug\EPPlus.dll
 C:\Users\thang\Searches\source\repos\QLSV\bin\Debug\EPPlus.Interfaces.dll
 C:\Users\thang\Searches\source\repos\QLSV\bin\Debug\EPPlus.System.Drawing.dll
 C:\Users\thang\Searches\source\repos\QLSV\bin\Debug\EPPlus.xml
+C:\Users\thang\Searches\source\repos\QLSV\obj\Debug\QLSV.PrintScore.resources

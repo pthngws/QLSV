@@ -24,7 +24,6 @@ namespace QLSV
         private void Print_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'baiTapWinformDataSet8.std' table. You can move, or remove it, as needed.
-            this.stdTableAdapter1.Fill(this.baiTapWinformDataSet8.std);
             // TODO: This line of code loads data into the 'baiTapWinformDataSet3.std' table. You can move, or remove it, as needed.
             SqlCommand cmd = new SqlCommand("Select * from std");
             fillGrid(cmd);
@@ -102,25 +101,17 @@ namespace QLSV
 
         private void buttonPrint_Click(object sender, EventArgs e)
         {
-            PrintDocument printDocument1 = new PrintDocument();
-            printDocument1.DocumentName = "Print Document";
-
-            printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
-
-            PrintDialog printDialog1 = new PrintDialog();
+            printDialog1 = new PrintDialog();
+            printDocument1.DocumentName = " Print Document";
             printDialog1.Document = printDocument1;
-
+            printDialog1.AllowSelection = true;
+            printDialog1.AllowSomePages = true;
             if (printDialog1.ShowDialog() == DialogResult.OK)
             {
                 printDocument1.Print();
             }
         }
 
-        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
-        {
-            // Thực hiện vẽ nội dung cần in ở đây
-            e.Graphics.DrawString("Hello, world!", new Font("Arial", 12), Brushes.Black, new PointF(100, 100));
-        }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {

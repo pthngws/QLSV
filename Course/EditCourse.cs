@@ -15,7 +15,7 @@ namespace QLSV
         public void fillCombo(int index)
         {
             comboBoxCourse.DataSource = course.getAllCourses();
-            comboBoxCourse.DisplayMember = "label";
+            comboBoxCourse.DisplayMember = "id";
             comboBoxCourse.ValueMember = "id";
             comboBoxCourse.SelectedItem = null;
         }
@@ -106,7 +106,7 @@ namespace QLSV
         private void EditCourse_Load(object sender, EventArgs e)
         {
             comboBoxCourse.DataSource = course.getAllCourses();
-            comboBoxCourse.DisplayMember = "label";
+            comboBoxCourse.DisplayMember = "id";
             comboBoxCourse.ValueMember = "id";
             comboBoxCourse.SelectedItem = null;
 

@@ -43,6 +43,8 @@
             this.stdBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.baiTapWinformDataSet11 = new QLSV.BaiTapWinformDataSet11();
             this.stdTableAdapter = new QLSV.BaiTapWinformDataSet11TableAdapters.stdTableAdapter();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.stdBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdBindingSource1)).BeginInit();
@@ -68,7 +70,7 @@
             this.textBoxCourseID.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxCourseID.Multiline = true;
             this.textBoxCourseID.Name = "textBoxCourseID";
-            this.textBoxCourseID.Size = new System.Drawing.Size(176, 37);
+            this.textBoxCourseID.Size = new System.Drawing.Size(327, 37);
             this.textBoxCourseID.TabIndex = 12;
             // 
             // CourseID
@@ -93,6 +95,7 @@
             this.buttonPrint.TabIndex = 14;
             this.buttonPrint.Text = "Print";
             this.buttonPrint.UseVisualStyleBackColor = false;
+            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // stdBindingSource
             // 
@@ -168,6 +171,10 @@
             // 
             this.stdTableAdapter.ClearBeforeFill = true;
             // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
             // CourseStdList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -213,5 +220,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

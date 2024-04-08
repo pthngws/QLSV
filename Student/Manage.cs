@@ -34,8 +34,22 @@ namespace QLSV
 
                 // Chuyển đổi hình ảnh thành mảng byte để lưu trong cơ sở dữ liệu
                 MemoryStream pictureMemoryStream = new MemoryStream();
-                PictureBoxStudentImage.Image.Save(pictureMemoryStream, PictureBoxStudentImage.Image.RawFormat);
-                byte[] picture = pictureMemoryStream.ToArray();
+                byte[] picture;
+
+                if (PictureBoxStudentImage.Image != null)
+                {
+                    // Nếu hình ảnh trong PictureBox tồn tại, lưu vào MemoryStream
+                    PictureBoxStudentImage.Image.Save(pictureMemoryStream, PictureBoxStudentImage.Image.RawFormat);
+                    picture = pictureMemoryStream.ToArray();
+                    // Sử dụng biến picture ở đây cho mục đích khác nếu cần
+                }
+                else
+                {
+                    // Nếu không có hình ảnh, bạn có thể thông báo lỗi hoặc thực hiện xử lý khác tùy thuộc vào yêu cầu của bạn
+                    MessageBox.Show("Không có hình ảnh để lưu.");
+                    picture = null;
+                }
+
                 int born_year = DateTimePicker1.Value.Year;
                 int this_year = DateTime.Now.Year;
                 //  sv tu 10-100,  co the thay doi
@@ -196,14 +210,13 @@ namespace QLSV
         private void Manage_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'baiTapWinformDataSet7.std' table. You can move, or remove it, as needed.
-            this.stdTableAdapter1.Fill(this.baiTapWinformDataSet7.std);
             // TODO: This line of code loads data into the 'baiTapWinformDataSet2.std' table. You can move, or remove it, as needed.
             SqlCommand cmd = new SqlCommand("SELECT * FROM std");
-            this.stdTableAdapter.Fill(this.baiTapWinformDataSet2.std);
+            dataGridView1.DataSource = student.getStudents(cmd);
             dataGridView1.ReadOnly = true;
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
             dataGridView1.RowTemplate.Height = 80;
-            dataGridView1.DataSource = student.getStudents(cmd);
+
             picCol = (DataGridViewImageColumn)dataGridView1.Columns[7];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
             dataGridView1.AllowUserToAddRows = false;
@@ -225,25 +238,49 @@ namespace QLSV
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            TextBoxID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            TextBoxFname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            TextBoxLname.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            DateTimePicker1.Value = (DateTime)dataGridView1.CurrentRow.Cells[3].Value;
+            try
+            {
+                TextBoxID.Text = dataGridView1.CurrentRow.Cells[0].Value?.ToString() ?? null;
+                TextBoxFname.Text = dataGridView1.CurrentRow.Cells[1].Value?.ToString() ?? null;
+                TextBoxLname.Text = dataGridView1.CurrentRow.Cells[2].Value?.ToString() ?? null;
 
-            if (dataGridView1.CurrentRow.Cells[4].Value.ToString().Trim() == "Female")
-            {
-                RadioButtonFemale.Checked = true;
+                // Kiểm tra nếu giá trị của ô là null hoặc không thể chuyển đổi sang kiểu DateTime
+                if (dataGridView1.CurrentRow.Cells[3].Value == null || !DateTime.TryParse(dataGridView1.CurrentRow.Cells[3].Value.ToString(), out DateTime dateValue))
+                {
+                    DateTimePicker1.Value = DateTime.Now; // hoặc giá trị mặc định khác tùy thuộc vào yêu cầu của bạn
+                }
+                else
+                {
+                    DateTimePicker1.Value = (DateTime)dataGridView1.CurrentRow.Cells[3].Value;
+                }
+
+                if (dataGridView1.CurrentRow.Cells[4].Value?.ToString().Trim() == "Female")
+                {
+                    RadioButtonFemale.Checked = true;
+                }
+                else
+                {
+                    RadioButtonMale.Checked = true;
+                }
+
+                TextBoxPhone.Text = dataGridView1.CurrentRow.Cells[5].Value?.ToString() ?? null;
+                TextBoxAddress.Text = dataGridView1.CurrentRow.Cells[6].Value?.ToString() ?? null;
+
+                byte[] pic = dataGridView1.CurrentRow.Cells[7].Value as byte[];
+                if (pic != null && pic.Length > 0)
+                {
+                    MemoryStream picture = new MemoryStream(pic);
+                    PictureBoxStudentImage.Image = Image.FromStream(picture);
+                }
+                else
+                {
+                    PictureBoxStudentImage.Image = null; // hoặc thiết lập hình ảnh mặc định khác
+                }
             }
-            else
+            catch (SqlException ex)
             {
-                RadioButtonMale.Checked = true;
+                MessageBox.Show(ex.Message);
             }
-            TextBoxPhone.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            TextBoxAddress.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            byte[] pic;
-            pic = (byte[])dataGridView1.CurrentRow.Cells[7].Value;
-            MemoryStream picture = new MemoryStream(pic);
-            PictureBoxStudentImage.Image = Image.FromStream(picture);
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)

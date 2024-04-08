@@ -86,11 +86,22 @@ namespace QLSV
             return dataTable;
 
         }
+        public DataTable getScore(SqlCommand cmd)
+        {
+            SqlCommand command = cmd;
+            command.Connection = MY_DB.getConnection;
+            MY_DB.openConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            MY_DB.closeConnection();
+            return dataTable;
+        }
         public DataTable getAvgScoreByCourse()
         {
             SqlCommand command = new SqlCommand();
             command.Connection = MY_DB.getConnection;
-            command.CommandText = "select courseID, avg(student_score) as AverageGrade from score group by courseID";
+            command.CommandText = "select courseID as 'ID môn học',course.label as 'Tên môn học', avg(student_score) as 'Điểm trung bình' from score,course where course.id = score.courseid group by courseID,course.label";
 
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable dataTable = new DataTable();

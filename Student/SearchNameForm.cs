@@ -24,7 +24,6 @@ namespace QLSV
         private void SearchNameForm_Load(object sender, EventArgs e)
         {
             // Nạp dữ liệu vào bảng 'std' từ DataSet khi form được load
-            this.stdTableAdapter.Fill(this.baiTapWinformDataSet1.std);
 
             // Tạo câu lệnh SQL để lấy tất cả sinh viên
             SqlCommand cmd = new SqlCommand("SELECT * FROM std");
@@ -44,27 +43,55 @@ namespace QLSV
             if (user.Role == "admin")
             {
                 UpdateDeleteStudentForm updateDeleteStudentForm = new UpdateDeleteStudentForm();
-                updateDeleteStudentForm.TextBoxID.Text = DataGridView.CurrentRow.Cells[0].Value.ToString();
-                updateDeleteStudentForm.TextBoxFname.Text = DataGridView.CurrentRow.Cells[1].Value.ToString();
-                updateDeleteStudentForm.TextBoxLname.Text = DataGridView.CurrentRow.Cells[2].Value.ToString();
-                updateDeleteStudentForm.DateTimePicker1.Value = (DateTime)DataGridView.CurrentRow.Cells[3].Value;
+                try
+                {
+                    updateDeleteStudentForm.TextBoxID.Text = DataGridView.CurrentRow.Cells[0].Value?.ToString() ?? null;
+                    updateDeleteStudentForm.TextBoxFname.Text = DataGridView.CurrentRow.Cells[1].Value?.ToString() ?? null;
+                    updateDeleteStudentForm.TextBoxLname.Text = DataGridView.CurrentRow.Cells[2].Value?.ToString() ?? null;
 
-                if (DataGridView.CurrentRow.Cells[4].Value.ToString().Trim() == "Female")
-                {
-                    updateDeleteStudentForm.RadioButtonFemale.Checked = true;
+                    // Kiểm tra nếu giá trị của ô là null hoặc không thể chuyển đổi sang kiểu DateTime
+                    if (DataGridView.CurrentRow.Cells[3].Value == null || !DateTime.TryParse(DataGridView.CurrentRow.Cells[3].Value.ToString(), out DateTime dateValue))
+                    {
+                        updateDeleteStudentForm.DateTimePicker1.Value = DateTime.Now; // hoặc giá trị mặc định khác tùy thuộc vào yêu cầu của bạn
+                    }
+                    else
+                    {
+                        updateDeleteStudentForm.DateTimePicker1.Value = (DateTime)DataGridView.CurrentRow.Cells[3].Value;
+                    }
+
+                    if (DataGridView.CurrentRow.Cells[4].Value?.ToString().Trim() == "Female")
+                    {
+                        updateDeleteStudentForm.RadioButtonFemale.Checked = true;
+                    }
+                    else
+                    {
+                        updateDeleteStudentForm.RadioButtonMale.Checked = true;
+                    }
+
+                    updateDeleteStudentForm.TextBoxPhone.Text = DataGridView.CurrentRow.Cells[5].Value?.ToString() ?? null;
+                    updateDeleteStudentForm.TextBoxAddress.Text = DataGridView.CurrentRow.Cells[6].Value?.ToString() ?? null;
+
+                    byte[] pic = DataGridView.CurrentRow.Cells[7].Value as byte[];
+                    if (pic != null && pic.Length > 0)
+                    {
+                        MemoryStream picture = new MemoryStream(pic);
+                        updateDeleteStudentForm.PictureBoxStudentImage.Image = Image.FromStream(picture);
+                    }
+                    else
+                    {
+                        updateDeleteStudentForm.PictureBoxStudentImage.Image = null; // hoặc thiết lập hình ảnh mặc định khác
+                    }
+
+                    this.Show();
+                    updateDeleteStudentForm.Show();
                 }
-                else
+                catch (SqlException ex)
                 {
-                    updateDeleteStudentForm.RadioButtonMale.Checked = true;
+                    MessageBox.Show(ex.Message);
                 }
-                updateDeleteStudentForm.TextBoxPhone.Text = DataGridView.CurrentRow.Cells[5].Value.ToString();
-                updateDeleteStudentForm.TextBoxAddress.Text = DataGridView.CurrentRow.Cells[6].Value.ToString();
-                byte[] pic;
-                pic = (byte[])DataGridView.CurrentRow.Cells[7].Value;
-                MemoryStream picture = new MemoryStream(pic);
-                updateDeleteStudentForm.PictureBoxStudentImage.Image = Image.FromStream(picture);
-                this.Show();
-                updateDeleteStudentForm.Show();
+
+
+
             }
 
 

@@ -116,56 +116,56 @@
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "MSSV";
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             // 
             // fnameDataGridViewTextBoxColumn
             // 
             this.fnameDataGridViewTextBoxColumn.DataPropertyName = "fname";
-            this.fnameDataGridViewTextBoxColumn.HeaderText = "fname";
+            this.fnameDataGridViewTextBoxColumn.HeaderText = "Họ";
             this.fnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.fnameDataGridViewTextBoxColumn.Name = "fnameDataGridViewTextBoxColumn";
             // 
             // lnameDataGridViewTextBoxColumn
             // 
             this.lnameDataGridViewTextBoxColumn.DataPropertyName = "lname";
-            this.lnameDataGridViewTextBoxColumn.HeaderText = "lname";
+            this.lnameDataGridViewTextBoxColumn.HeaderText = "Tên";
             this.lnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.lnameDataGridViewTextBoxColumn.Name = "lnameDataGridViewTextBoxColumn";
             // 
             // bdateDataGridViewTextBoxColumn
             // 
             this.bdateDataGridViewTextBoxColumn.DataPropertyName = "bdate";
-            this.bdateDataGridViewTextBoxColumn.HeaderText = "bdate";
+            this.bdateDataGridViewTextBoxColumn.HeaderText = "Ngày sinh";
             this.bdateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.bdateDataGridViewTextBoxColumn.Name = "bdateDataGridViewTextBoxColumn";
             // 
             // genderDataGridViewTextBoxColumn
             // 
             this.genderDataGridViewTextBoxColumn.DataPropertyName = "gender";
-            this.genderDataGridViewTextBoxColumn.HeaderText = "gender";
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Giới tính";
             this.genderDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
             // 
             // phoneDataGridViewTextBoxColumn
             // 
             this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Số điện thoại";
             this.phoneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
             // 
             // addressDataGridViewTextBoxColumn
             // 
             this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Địa chỉ";
             this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
             // 
             // pictureDataGridViewImageColumn
             // 
             this.pictureDataGridViewImageColumn.DataPropertyName = "picture";
-            this.pictureDataGridViewImageColumn.HeaderText = "picture";
+            this.pictureDataGridViewImageColumn.HeaderText = "Hình ảnh";
             this.pictureDataGridViewImageColumn.MinimumWidth = 6;
             this.pictureDataGridViewImageColumn.Name = "pictureDataGridViewImageColumn";
             // 

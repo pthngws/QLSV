@@ -243,9 +243,10 @@ private void listBox1_Click(object sender, EventArgs e)
         {
             DataRowView drv = (DataRowView)listBox1.SelectedItem;
             string coursename = drv.Row[1].ToString();
+            string courseid = drv.Row[0].ToString();
             string semester = (string)comboBox1.Text;
 
-            CourseStdList courseStdList = new CourseStdList(coursename,semester);
+            CourseStdList courseStdList = new CourseStdList(coursename,semester,courseid);
             courseStdList.Show();
         }
 

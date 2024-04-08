@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -136,6 +137,12 @@ namespace QLSV
         {
             AvgScore avgScore = new AvgScore();
             avgScore.Show();
+        }
+
+        private void printToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            PrintScore print = new PrintScore();
+            print.Show();
         }
     }
 }
