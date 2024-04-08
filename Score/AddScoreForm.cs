@@ -103,5 +103,12 @@ namespace QLSV
             list = sTUDENT.selectedCourseStudent(textBoxID.Text);
             comboBoxCourse.DataSource = list;
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBoxID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            list = sTUDENT.selectedCourseStudent(textBoxID.Text);
+            comboBoxCourse.DataSource = list;
+        }
     }
 }

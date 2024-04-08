@@ -36,17 +36,17 @@
             this.stdBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.baiTapWinformDataSet11 = new QLSV.BaiTapWinformDataSet11();
-            this.stdBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.stdTableAdapter = new QLSV.BaiTapWinformDataSet11TableAdapters.stdTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stdBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.baiTapWinformDataSet11 = new QLSV.BaiTapWinformDataSet11();
+            this.stdTableAdapter = new QLSV.BaiTapWinformDataSet11TableAdapters.stdTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.stdBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet11)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -111,6 +111,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -125,27 +126,12 @@
             this.dataGridView1.Size = new System.Drawing.Size(941, 399);
             this.dataGridView1.TabIndex = 18;
             // 
-            // baiTapWinformDataSet11
-            // 
-            this.baiTapWinformDataSet11.DataSetName = "BaiTapWinformDataSet11";
-            this.baiTapWinformDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stdBindingSource1
-            // 
-            this.stdBindingSource1.DataMember = "std";
-            this.stdBindingSource1.DataSource = this.baiTapWinformDataSet11;
-            // 
-            // stdTableAdapter
-            // 
-            this.stdTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
             this.dataGridViewTextBoxColumn1.HeaderText = "id";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -153,7 +139,6 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "fname";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -161,7 +146,6 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "lname";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -169,7 +153,20 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "bdate";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // stdBindingSource1
+            // 
+            this.stdBindingSource1.DataMember = "std";
+            this.stdBindingSource1.DataSource = this.baiTapWinformDataSet11;
+            // 
+            // baiTapWinformDataSet11
+            // 
+            this.baiTapWinformDataSet11.DataSetName = "BaiTapWinformDataSet11";
+            this.baiTapWinformDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // stdTableAdapter
+            // 
+            this.stdTableAdapter.ClearBeforeFill = true;
             // 
             // CourseStdList
             // 
@@ -190,8 +187,8 @@
             this.Load += new System.EventHandler(this.CourseStdList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.stdBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

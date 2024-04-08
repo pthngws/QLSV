@@ -38,20 +38,20 @@
             this.courseTableAdapter = new QLSV.BaiTapWinformDataSet4TableAdapters.CourseTableAdapter();
             this.baiTapWinformDataSet1 = new QLSV.BaiTapWinformDataSet();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.baiTapWinformDataSet12 = new QLSV.BaiTapWinformDataSet12();
-            this.courseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.courseTableAdapter1 = new QLSV.BaiTapWinformDataSet12TableAdapters.CourseTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.periodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.semesterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.baiTapWinformDataSet12 = new QLSV.BaiTapWinformDataSet12();
+            this.courseTableAdapter1 = new QLSV.BaiTapWinformDataSet12TableAdapters.CourseTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet12)).BeginInit();
             this.SuspendLayout();
             // 
             // courseBindingSource
@@ -104,6 +104,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -119,27 +120,12 @@
             this.dataGridView1.Size = new System.Drawing.Size(974, 497);
             this.dataGridView1.TabIndex = 3;
             // 
-            // baiTapWinformDataSet12
-            // 
-            this.baiTapWinformDataSet12.DataSetName = "BaiTapWinformDataSet12";
-            this.baiTapWinformDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // courseBindingSource1
-            // 
-            this.courseBindingSource1.DataMember = "Course";
-            this.courseBindingSource1.DataSource = this.baiTapWinformDataSet12;
-            // 
-            // courseTableAdapter1
-            // 
-            this.courseTableAdapter1.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 125;
             // 
             // labelDataGridViewTextBoxColumn
             // 
@@ -147,7 +133,6 @@
             this.labelDataGridViewTextBoxColumn.HeaderText = "label";
             this.labelDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.labelDataGridViewTextBoxColumn.Name = "labelDataGridViewTextBoxColumn";
-            this.labelDataGridViewTextBoxColumn.Width = 125;
             // 
             // periodDataGridViewTextBoxColumn
             // 
@@ -155,7 +140,6 @@
             this.periodDataGridViewTextBoxColumn.HeaderText = "period";
             this.periodDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.periodDataGridViewTextBoxColumn.Name = "periodDataGridViewTextBoxColumn";
-            this.periodDataGridViewTextBoxColumn.Width = 125;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
@@ -163,7 +147,6 @@
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
             this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.Width = 125;
             // 
             // semesterDataGridViewTextBoxColumn
             // 
@@ -171,7 +154,20 @@
             this.semesterDataGridViewTextBoxColumn.HeaderText = "semester";
             this.semesterDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.semesterDataGridViewTextBoxColumn.Name = "semesterDataGridViewTextBoxColumn";
-            this.semesterDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // courseBindingSource1
+            // 
+            this.courseBindingSource1.DataMember = "Course";
+            this.courseBindingSource1.DataSource = this.baiTapWinformDataSet12;
+            // 
+            // baiTapWinformDataSet12
+            // 
+            this.baiTapWinformDataSet12.DataSetName = "BaiTapWinformDataSet12";
+            this.baiTapWinformDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // courseTableAdapter1
+            // 
+            this.courseTableAdapter1.ClearBeforeFill = true;
             // 
             // PrintCourse
             // 
@@ -191,8 +187,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet12)).EndInit();
             this.ResumeLayout(false);
 
         }

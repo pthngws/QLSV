@@ -1,4 +1,5 @@
 ﻿
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
+using System.Xml.Linq;
 
 
 namespace QLSV
@@ -25,7 +28,6 @@ namespace QLSV
         private void StudentListForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'baiTapWinformDataSet.std' table. You can move, or remove it, as needed.
-            this.stdTableAdapter.Fill(this.baiTapWinformDataSet.std);
 
             // Tạo câu lệnh SQL để lấy tất cả sinh viên
             SqlCommand cmd = new SqlCommand("SELECT * FROM std");
@@ -57,7 +59,6 @@ namespace QLSV
         STUDENT STUDENT = new STUDENT();
         private void ButtonRefresh_Click(object sender, EventArgs e)
         {
-            this.stdTableAdapter.Fill(this.baiTapWinformDataSet.std);
             SqlCommand cmd = new SqlCommand("select * from std");
             dataGridView1.ReadOnly = true;
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
@@ -104,39 +105,85 @@ namespace QLSV
 
         private void buttonImport_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
-            openFileDialog.Title = "Select an Excel File";
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            string filepath = "";
+            OpenFileDialog op = new OpenFileDialog();
+            if (op.ShowDialog() == DialogResult.OK)
             {
-                string filePath = openFileDialog.FileName;
+                filepath = op.FileName;
+            }
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("Fname");
+            dt.Columns.Add("Lname");
+            dt.Columns.Add("bdate");
 
-                // Thực hiện kết nối với tệp Excel
-                string connectionString = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={filePath};Extended Properties='Excel 12.0;HDR=YES;IMEX=1;'";
-                using (OleDbConnection connection = new OleDbConnection(connectionString))
+            // Cài đặt LicenseContext ở đầu phương thức
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+            try
+            {
+                var package = new ExcelPackage(new FileInfo(filepath));
+                ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+
+                for (int i = worksheet.Dimension.Start.Row + 1; i <= worksheet.Dimension.End.Row; i++)
                 {
-                    connection.Open();
+                    int j = 3;
+                    string mssv = worksheet.Cells[i, j++].Value?.ToString();
+                    string fname = worksheet.Cells[i, j++].Value?.ToString();
+                    string lname = worksheet.Cells[i, j++].Value?.ToString();
+                    var bdatetemp = worksheet.Cells[i, j++].Value;
 
-                    // Lấy danh sách các sheet trong tệp Excel
-                    DataTable excelSchema = connection.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
-
-                    // Lấy tên của sheet đầu tiên
-                    string sheetName = excelSchema.Rows[0]["TABLE_NAME"].ToString();
-
-                    // Thực hiện truy vấn để lấy dữ liệu từ sheet
-                    string query = $"SELECT * FROM [{sheetName}]";
-                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection))
+                    DateTime bdate;
+                    if (DateTime.TryParse(bdatetemp?.ToString(), out bdate))
                     {
-                        DataTable dataTable = new DataTable();
-                        adapter.Fill(dataTable);
+                        bdate = bdate.Date;
+                        dt.Rows.Add(mssv, fname, lname, bdate);
+                    }
+                    else
+                    {
+                        dt.Rows.Add(mssv, fname, lname, DBNull.Value);
+                    }
+                }
 
-                        // Hiển thị dữ liệu trên DataGridView
-                        dataGridView1.DataSource = dataTable;
+                // Đặt DataSource của DataGridView sau khi đã thêm dữ liệu vào DataTable
+                dataGridView1.DataSource = dt;
+                dataGridView1.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    // Kiểm tra hàng không phải hàng mới thêm vào
+                    if (!row.IsNewRow)
+                    {
+                        // Lấy giá trị cột ID từ hàng
+                        int id = Convert.ToInt32(row.Cells["idDataGridViewTextBoxColumn"].Value);
+                        // Tạo giá trị email và đặt vào cột "email"
+                        row.Cells["Email"].Value = id.ToString() + "@student.hcmute.edu.vn";
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading data from Excel: " + ex.Message);
+
+            }
         }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -165,63 +212,63 @@ namespace QLSV
                         }
             */
 
-            // Đặt giá trị cho cột "email"
+// Đặt giá trị cho cột "email"
 
-            /*        private void buttonImport_Click(object sender, EventArgs e)
+/*        private void buttonImport_Click(object sender, EventArgs e)
+        {
+            string filepath = "";
+            OpenFileDialog op = new OpenFileDialog();
+            if (op.ShowDialog() == DialogResult.OK)
+            {
+                filepath = op.FileName;
+            }
+            DataTable dt = new DataTable();
+            dt.Columns.Add("MSSV");
+            dt.Columns.Add("Họ");
+            dt.Columns.Add("Tên");
+            dt.Columns.Add("Ngày sinh");
+
+            try
+            {
+                var package = new ExcelPackage(new FileInfo(filepath));
+*//*                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;*//*
+                ExcelWorksheet worksheet = package.Workbook.Worksheets[1];
+
+                for (int i = worksheet.Dimension.Start.Row + 1; i <= worksheet.Dimension.End.Row; i++)
+                {
+                    try
                     {
-                        string filepath = "";
-                        OpenFileDialog op = new OpenFileDialog();
-                        if (op.ShowDialog() == DialogResult.OK)
+                        int j = 1; // Bắt đầu từ cột 1 (A)
+                        string mssv = worksheet.Cells[i, j++].Value?.ToString();
+                        string fname = worksheet.Cells[i, j++].Value?.ToString();
+                        string lname = worksheet.Cells[i, j++].Value?.ToString();
+                        DateTime bdate = DateTime.MinValue;
+                        if (DateTime.TryParse(worksheet.Cells[i, j].Value?.ToString(), out bdate))
                         {
-                            filepath = op.FileName;
+                            dt.Rows.Add(mssv, fname, lname, bdate);
                         }
-                        DataTable dt = new DataTable();
-                        dt.Columns.Add("MSSV");
-                        dt.Columns.Add("Họ");
-                        dt.Columns.Add("Tên");
-                        dt.Columns.Add("Ngày sinh");
-
-                        try
+                        else
                         {
-                            var package = new ExcelPackage(new FileInfo(filepath));
-            *//*                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;*//*
-                            ExcelWorksheet worksheet = package.Workbook.Worksheets[1];
-
-                            for (int i = worksheet.Dimension.Start.Row + 1; i <= worksheet.Dimension.End.Row; i++)
-                            {
-                                try
-                                {
-                                    int j = 1; // Bắt đầu từ cột 1 (A)
-                                    string mssv = worksheet.Cells[i, j++].Value?.ToString();
-                                    string fname = worksheet.Cells[i, j++].Value?.ToString();
-                                    string lname = worksheet.Cells[i, j++].Value?.ToString();
-                                    DateTime bdate = DateTime.MinValue;
-                                    if (DateTime.TryParse(worksheet.Cells[i, j].Value?.ToString(), out bdate))
-                                    {
-                                        dt.Rows.Add(mssv, fname, lname, bdate);
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show($"Invalid date format at row {i}");
-                                    }
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show(ex.Message);
-                                }
-                            }
-
-                            dataGridView1.DataSource = dt;
+                            MessageBox.Show($"Invalid date format at row {i}");
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error importing data from Excel: " + ex.Message);
-                        }
-                    }*/
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
 
-        }
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error importing data from Excel: " + ex.Message);
+            }
+        }*/
 
 
 
-}
+
+
+
 

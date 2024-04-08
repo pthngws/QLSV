@@ -43,3 +43,7 @@ C:\Users\thang\Searches\source\repos\QLSV\bin\Debug\System.Buffers.xml
 C:\Users\thang\Searches\source\repos\QLSV\bin\Debug\System.Memory.xml
 C:\Users\thang\Searches\source\repos\QLSV\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\thang\Searches\source\repos\QLSV\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\thang\Searches\source\repos\QLSV\bin\Debug\EPPlus.dll
+C:\Users\thang\Searches\source\repos\QLSV\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\thang\Searches\source\repos\QLSV\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\thang\Searches\source\repos\QLSV\bin\Debug\EPPlus.xml
