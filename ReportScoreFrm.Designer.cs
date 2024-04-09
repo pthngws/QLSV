@@ -1,6 +1,6 @@
 ﻿namespace QLSV
 {
-    partial class ReportForm
+    partial class ReportScoreFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,23 +33,22 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QLSV.ReportStd.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(2, 2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QLSV.ReportScr.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1822, 698);
+            this.reportViewer1.Size = new System.Drawing.Size(1127, 505);
             this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // ReportForm
+            // ReportScoreFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1830, 704);
+            this.ClientSize = new System.Drawing.Size(1139, 506);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "ReportForm";
-            this.Text = "ReportForm";
-            this.Load += new System.EventHandler(this.ReportForm_Load);
+            this.Name = "ReportScoreFrm";
+            this.Text = "ReportScoreFrm";
+            this.Load += new System.EventHandler(this.ReportScoreFrm_Load);
             this.ResumeLayout(false);
 
         }

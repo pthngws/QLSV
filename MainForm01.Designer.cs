@@ -42,6 +42,7 @@
             this.manageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOURSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addCourseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +53,7 @@
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
             this.manageCourseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
+            this.reportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
@@ -67,7 +69,7 @@
             this.finalResultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aDMINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.approveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -203,6 +205,14 @@
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
+            // reportToolStripMenuItem
+            // 
+            this.reportToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(368, 32);
+            this.reportToolStripMenuItem.Text = "Report";
+            this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
+            // 
             // cOURSEToolStripMenuItem
             // 
             this.cOURSEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -214,7 +224,8 @@
             this.editCourseToolStripMenuItem,
             this.toolStripMenuItem7,
             this.manageCourseToolStripMenuItem,
-            this.toolStripMenuItem6});
+            this.toolStripMenuItem6,
+            this.reportToolStripMenuItem1});
             this.cOURSEToolStripMenuItem.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cOURSEToolStripMenuItem.Name = "cOURSEToolStripMenuItem";
             this.cOURSEToolStripMenuItem.Size = new System.Drawing.Size(128, 31);
@@ -285,6 +296,13 @@
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
             this.toolStripMenuItem6.Size = new System.Drawing.Size(277, 6);
             // 
+            // reportToolStripMenuItem1
+            // 
+            this.reportToolStripMenuItem1.Name = "reportToolStripMenuItem1";
+            this.reportToolStripMenuItem1.Size = new System.Drawing.Size(280, 32);
+            this.reportToolStripMenuItem1.Text = "Report";
+            this.reportToolStripMenuItem1.Click += new System.EventHandler(this.reportToolStripMenuItem1_Click);
+            // 
             // sCOREToolStripMenuItem
             // 
             this.sCOREToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -296,7 +314,8 @@
             this.toolStripMenuItem12,
             this.avgScoreByCourseToolStripMenuItem,
             this.toolStripMenuItem13,
-            this.printToolStripMenuItem2});
+            this.printToolStripMenuItem2,
+            this.reportToolStripMenuItem2});
             this.sCOREToolStripMenuItem.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sCOREToolStripMenuItem.Name = "sCOREToolStripMenuItem";
             this.sCOREToolStripMenuItem.Size = new System.Drawing.Size(111, 31);
@@ -405,13 +424,12 @@
             this.approveToolStripMenuItem.Text = "Approve";
             this.approveToolStripMenuItem.Click += new System.EventHandler(this.approveToolStripMenuItem_Click);
             // 
-            // reportToolStripMenuItem
+            // reportToolStripMenuItem2
             // 
-            this.reportToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(368, 32);
-            this.reportToolStripMenuItem.Text = "Report";
-            this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
+            this.reportToolStripMenuItem2.Name = "reportToolStripMenuItem2";
+            this.reportToolStripMenuItem2.Size = new System.Drawing.Size(326, 32);
+            this.reportToolStripMenuItem2.Text = "Report";
+            this.reportToolStripMenuItem2.Click += new System.EventHandler(this.reportToolStripMenuItem2_Click);
             // 
             // MainForm01
             // 
@@ -476,5 +494,7 @@
         private System.Windows.Forms.ToolStripMenuItem aDMINToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem approveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem2;
     }
 }

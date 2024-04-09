@@ -150,5 +150,17 @@ namespace QLSV
             ReportForm report = new ReportForm();
             report.Show();
         }
+
+        private void reportToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ReportCrsForm report = new ReportCrsForm();
+            report.Show();
+        }
+
+        private void reportToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            ReportScoreFrm reportCrsForm = new ReportScoreFrm();
+            reportCrsForm.Show();
+        }
     }
 }

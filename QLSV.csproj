@@ -132,12 +132,29 @@
     <Compile Include="Course\AddCourseForm.Designer.cs">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Student\Report\ReportForm.cs">
+    <Compile Include="Course\COURSEE.cs" />
+    <Compile Include="Crs.cs" />
+    <Compile Include="CrsContext.cs" />
+    <Compile Include="ReportCrsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Student\Report\ReportForm.Designer.cs">
+    <Compile Include="ReportCrsForm.Designer.cs">
+      <DependentUpon>ReportCrsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportScoreFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportScoreFrm.Designer.cs">
+      <DependentUpon>ReportScoreFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scores.cs" />
+    <Compile Include="Scr.cs" />
     <Compile Include="Score\PrintScore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,9 +247,10 @@
       <DependentUpon>RemoveScore.cs</DependentUpon>
     </Compile>
     <Compile Include="Score\Score.cs" />
+    <Compile Include="SCRContext.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="Student\Report\std.cs" />
-    <Compile Include="Student\Report\StdContext.cs" />
+    <Compile Include="std.cs" />
+    <Compile Include="StdContext.cs" />
     <Compile Include="Student\AddStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -348,10 +366,22 @@
     <EmbeddedResource Include="Course\AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Student\Report\ReportForm.resx">
+    <EmbeddedResource Include="ReportScr.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportCrs.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportCrsForm.resx">
+      <DependentUpon>ReportCrsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Student\Report\ReportStd.rdlc">
+    <EmbeddedResource Include="ReportScoreFrm.resx">
+      <DependentUpon>ReportScoreFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportStd.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Score\PrintScore.resx">
@@ -580,6 +610,10 @@
       <DependentUpon>BaiTapWinformDataSet9.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Course.datasource" />
+    <None Include="Properties\DataSources\COURSEE.datasource" />
+    <None Include="Properties\DataSources\Crs.datasource" />
+    <None Include="Properties\DataSources\Scr.datasource" />
     <None Include="Properties\DataSources\std.datasource" />
     <None Include="Properties\DataSources\StdContext.datasource" />
     <None Include="Properties\DataSources\StdRP.datasource" />
@@ -618,6 +652,9 @@
     <None Include="Resources\search.png" />
     <None Include="Resources\user.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Course\report\" />
+    <Folder Include="Student\Report\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -20,8 +20,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.00753cm</Top>
-        <Left>4.77753cm</Left>
+        <Top>1.04041cm</Top>
+        <Left>4.72672cm</Left>
         <Height>0.9175cm</Height>
         <Width>17.02033cm</Width>
         <Style>
@@ -34,101 +34,44 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Tablix Name="Tablix1">
+      <Image Name="Image1">
+        <Source>Embedded</Source>
+        <Value>fit</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.27108cm</Top>
+        <Left>0.39369cm</Left>
+        <Height>2.99917cm</Height>
+        <Width>3.32033cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Tablix Name="Tablix2">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.85741cm</Width>
+              <Width>2.57619cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.27041cm</Width>
+              <Width>6.11016cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.93691cm</Width>
+              <Width>1.95813cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.93691cm</Width>
+              <Width>6.27613cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.94724cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.49758cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>3.29733cm</Width>
+              <Width>2.12747cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
               <Height>0.6cm</Height>
               <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox8">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Mã số sinh viên</Value>
-                              <Style>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox8</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                    <rd:Selected>true</rd:Selected>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox10">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Họ</Value>
-                              <Style>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox10</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                    <rd:Selected>true</rd:Selected>
-                  </CellContents>
-                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox12">
@@ -138,7 +81,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tên</Value>
+                              <Value>Mã khóa học</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -159,7 +102,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -171,7 +113,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ngày sinh</Value>
+                              <Value>Tên khóa học</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -192,7 +134,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -204,7 +145,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Giới tính</Value>
+                              <Value>Số tiết</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -225,7 +166,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -237,7 +177,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Số điện thoại</Value>
+                              <Value>Mô tả</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -258,7 +198,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -270,7 +209,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Địa chỉ</Value>
+                              <Value>Học kỳ</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -291,7 +230,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -331,21 +269,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Fname">
+                    <Textbox Name="Label">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Fname.Value</Value>
+                              <Value>=Fields!Label.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Fname</rd:DefaultName>
+                      <rd:DefaultName>Label</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -361,21 +299,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Lname">
+                    <Textbox Name="Period">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Lname.Value</Value>
+                              <Value>=Fields!Period.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Lname</rd:DefaultName>
+                      <rd:DefaultName>Period</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -391,23 +329,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="date">
+                    <Textbox Name="Description">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!date.Value</Value>
-                              <Style>
-                                <Format>d</Format>
-                              </Style>
+                              <Value>=Fields!Description.Value</Value>
+                              <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>date</rd:DefaultName>
+                      <rd:DefaultName>Description</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -423,81 +359,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Gender">
+                    <Textbox Name="Semester">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Gender.Value</Value>
+                              <Value>=Fields!Semester.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Gender</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Phone">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Phone.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Phone</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Address">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Address.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Address</rd:DefaultName>
+                      <rd:DefaultName>Semester</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -522,8 +398,6 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -536,54 +410,40 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSetSTD</DataSetName>
-        <Top>6.51087cm</Top>
-        <Left>0.70698cm</Left>
+        <DataSetName>DataSetCRS</DataSetName>
+        <Top>5.70653cm</Top>
+        <Left>1.13783cm</Left>
         <Height>1.2cm</Height>
-        <Width>23.74379cm</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Tablix>
-      <Image Name="Image1">
-        <Source>Embedded</Source>
-        <Value>fit</Value>
-        <Sizing>FitProportional</Sizing>
-        <Top>0.2382cm</Top>
-        <Left>0.70698cm</Left>
-        <Height>2.99917cm</Height>
-        <Width>3.32033cm</Width>
+        <Width>19.04808cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
-      </Image>
-      <Textbox Name="Textbox2">
+      </Tablix>
+      <Textbox Name="Textbox7">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>TP.HCM, ngày ... tháng ... năm ...</Value>
+                <Value>DANH SÁCH KHÓA HỌC</Value>
                 <Style>
-                  <FontStyle>Italic</FontStyle>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>8.22536cm</Top>
-        <Left>18.00212cm</Left>
-        <Height>0.6cm</Height>
-        <Width>5.51024cm</Width>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>3.41475cm</Top>
+        <Left>8.6922cm</Left>
+        <Height>0.87517cm</Height>
+        <Width>7.36833cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -602,21 +462,20 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>TRƯỞNG KHOA CÔNG NGHỆ THÔNG TIN</Value>
+                <Value>TP.HCM, ngày ... tháng ... năm ...</Value>
                 <Style>
-                  <FontSize>11pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
+                  <FontStyle>Italic</FontStyle>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>9.00175cm</Top>
-        <Left>16.70862cm</Left>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>8.14889cm</Top>
+        <Left>14.24378cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.74215cm</Width>
+        <Width>5.51024cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -628,16 +487,16 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox7">
+      <Textbox Name="Textbox5">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>DANH SÁCH SINH VIÊN</Value>
+                <Value>TRƯỞNG KHOA CÔNG NGHỆ THÔNG TIN</Value>
                 <Style>
-                  <FontSize>18pt</FontSize>
+                  <FontSize>11pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -645,11 +504,11 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>4.19044cm</Top>
-        <Left>8.8348cm</Left>
-        <Height>1.06567cm</Height>
-        <Width>7.56176cm</Width>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>8.92528cm</Top>
+        <Left>12.95028cm</Left>
+        <Height>0.6cm</Height>
+        <Width>7.74215cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -662,10 +521,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>5.30245in</Height>
+    <Height>5.175in</Height>
     <Style />
   </Body>
-  <Width>9.93643in</Width>
+  <Width>8.56183in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -683,49 +542,41 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>1f980a1f-7958-436d-bbaf-7cb6a9552979</rd:DataSourceID>
+      <rd:DataSourceID>d2d96005-6ac0-4a00-9972-27016413257e</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetSTD">
+    <DataSet Name="DataSetCRS">
       <Query>
         <DataSourceName>QLSV</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Address">
-          <DataField>Address</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="date">
-          <DataField>date</DataField>
-          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
-        </Field>
-        <Field Name="Fname">
-          <DataField>Fname</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Gender">
-          <DataField>Gender</DataField>
+        <Field Name="Description">
+          <DataField>Description</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Id">
           <DataField>Id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Lname">
-          <DataField>Lname</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Phone">
-          <DataField>Phone</DataField>
+        <Field Name="Label">
+          <DataField>Label</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Period">
+          <DataField>Period</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Semester">
+          <DataField>Semester</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>QLSV</rd:DataSetName>
-        <rd:TableName>STUDENT</rd:TableName>
-        <rd:ObjectDataSourceType>QLSV.STUDENT, QLSV, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>COURSEE</rd:TableName>
+        <rd:ObjectDataSourceType>QLSV.COURSEE, QLSV, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -748,5 +599,5 @@ S6DyDI8mSS2sBxAAaDxgBoHTdWYmarbGHX1SVE2smSYIQbM3TPgqZNNj2/MW3zHDXps1awoKdFRTW009
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>271b3270-c67d-4c39-be8b-b9c5e4917f6c</rd:ReportID>
+  <rd:ReportID>a2b41a5b-3e78-4ac4-a981-93db3e262784</rd:ReportID>
 </Report>

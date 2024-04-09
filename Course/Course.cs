@@ -15,23 +15,26 @@ namespace QLSV
     {
         MY_DB mydb = new MY_DB();
 
-            public string Id { get; set; }
-            public string Label { get; set; }
+        public string Id { get; set; }
+        public string Label { get; set; }
+        public int? Period { get; set; }
+        public string Description { get; set; }
+        public string Semester { get; set; }
 
 
         //  function to insert a new student
         public bool courseIdExists(string id)
         {
             mydb.openConnection();
-            SqlCommand sqlCommand = new SqlCommand("select count(*) from course where id = @id",mydb.getConnection);
+            SqlCommand sqlCommand = new SqlCommand("select count(*) from course where id = @id", mydb.getConnection);
 
             sqlCommand.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
             int count = (int)sqlCommand.ExecuteScalar();
             mydb.closeConnection();
-            return  count> 0;
+            return count > 0;
 
         }
-        public bool insertCourse(string Id, string label, int period, string description,string semester)
+        public bool insertCourse(string Id, string label, int period, string description, string semester)
         {
             // Check if the Id already exists
             if (courseIdExists(Id))
@@ -102,7 +105,7 @@ namespace QLSV
                     row["Label"] = reader["Label"].ToString();
                     row["Period"] = Convert.ToInt32(reader["Period"]);
                     row["Description"] = reader["Description"].ToString();
-                    row["semester"]= reader["semester"].ToString();
+                    row["semester"] = reader["semester"].ToString();
                     coursesDataTable.Rows.Add(row);
                 }
 
@@ -155,7 +158,7 @@ namespace QLSV
         {
 
             SqlCommand command = new SqlCommand("select * from course where id=@id");
-            command.Parameters.Add("id", SqlDbType.VarChar).Value=Id;
+            command.Parameters.Add("id", SqlDbType.VarChar).Value = Id;
             command.Connection = mydb.getConnection;
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable TABLE = new DataTable();
@@ -164,9 +167,9 @@ namespace QLSV
 
         }
 
-        public bool updateCourse(string courseId,string label, int period, string description,string semester)
+        public bool updateCourse(string courseId, string label, int period, string description, string semester)
         {
-            SqlCommand command = new SqlCommand("Update course set  label=@label,period=@period, description = @description,semester = @semester where id =@id",mydb.getConnection);
+            SqlCommand command = new SqlCommand("Update course set  label=@label,period=@period, description = @description,semester = @semester where id =@id", mydb.getConnection);
             mydb.getConnection.Close();
             mydb.getConnection.Open();
             command.Parameters.AddWithValue("@ID", courseId);
