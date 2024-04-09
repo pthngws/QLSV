@@ -133,28 +133,28 @@
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Course\COURSEE.cs" />
-    <Compile Include="Crs.cs" />
-    <Compile Include="CrsContext.cs" />
-    <Compile Include="ReportCrsForm.cs">
+    <Compile Include="Course\Report\Crs.cs" />
+    <Compile Include="Course\Report\CrsContext.cs" />
+    <Compile Include="Course\Report\ReportCrsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportCrsForm.Designer.cs">
+    <Compile Include="Course\Report\ReportCrsForm.Designer.cs">
       <DependentUpon>ReportCrsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportForm.cs">
+    <Compile Include="Student\Report\ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportForm.Designer.cs">
+    <Compile Include="Student\Report\ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportScoreFrm.cs">
+    <Compile Include="Score\Report\ReportScoreFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportScoreFrm.Designer.cs">
+    <Compile Include="Score\Report\ReportScoreFrm.Designer.cs">
       <DependentUpon>ReportScoreFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Scores.cs" />
-    <Compile Include="Scr.cs" />
+    <Compile Include="Score\Report\Scores.cs" />
+    <Compile Include="Score\Report\Scr.cs" />
     <Compile Include="Score\PrintScore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,10 +247,10 @@
       <DependentUpon>RemoveScore.cs</DependentUpon>
     </Compile>
     <Compile Include="Score\Score.cs" />
-    <Compile Include="SCRContext.cs" />
+    <Compile Include="Score\Report\SCRContext.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="std.cs" />
-    <Compile Include="StdContext.cs" />
+    <Compile Include="Student\Report\std.cs" />
+    <Compile Include="Student\Report\StdContext.cs" />
     <Compile Include="Student\AddStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,22 +366,22 @@
     <EmbeddedResource Include="Course\AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportScr.rdlc">
+    <EmbeddedResource Include="Score\Report\ReportScr.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportCrs.rdlc">
+    <EmbeddedResource Include="Course\Report\ReportCrs.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportCrsForm.resx">
+    <EmbeddedResource Include="Course\Report\ReportCrsForm.resx">
       <DependentUpon>ReportCrsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportForm.resx">
+    <EmbeddedResource Include="Student\Report\ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportScoreFrm.resx">
+    <EmbeddedResource Include="Score\Report\ReportScoreFrm.resx">
       <DependentUpon>ReportScoreFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportStd.rdlc">
+    <EmbeddedResource Include="Student\Report\ReportStd.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Score\PrintScore.resx">
@@ -652,9 +652,6 @@
     <None Include="Resources\search.png" />
     <None Include="Resources\user.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Course\report\" />
-    <Folder Include="Student\Report\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

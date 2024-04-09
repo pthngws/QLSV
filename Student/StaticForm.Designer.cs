@@ -75,7 +75,7 @@
             // 
             this.LabelFemale.AutoSize = true;
             this.LabelFemale.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelFemale.Location = new System.Drawing.Point(96, 62);
+            this.LabelFemale.Location = new System.Drawing.Point(115, 79);
             this.LabelFemale.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LabelFemale.Name = "LabelFemale";
             this.LabelFemale.Size = new System.Drawing.Size(79, 27);
@@ -97,7 +97,7 @@
             // 
             this.LabelMale.AutoSize = true;
             this.LabelMale.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelMale.Location = new System.Drawing.Point(114, 62);
+            this.LabelMale.Location = new System.Drawing.Point(144, 79);
             this.LabelMale.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LabelMale.Name = "LabelMale";
             this.LabelMale.Size = new System.Drawing.Size(79, 27);

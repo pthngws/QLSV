@@ -119,6 +119,11 @@ namespace QLSV
             }
         }
 
+        private void textBoxID_TextChanged(object sender, EventArgs e)
+        {
+            list = std.selectedCourseStudent(textBoxID.Text);
+            comboBoxCourse.DataSource = list;
+        }
     }
 }
 

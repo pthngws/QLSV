@@ -157,7 +157,7 @@ C:\Users\thang\Source\Repos\pthngws\QLSV\bin\Debug\zh-CHT\Microsoft.ReportViewer
 C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.ReportForm.resources
 C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.Student.Selected_CourseForm.resources
 C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.ReportCrsForm.resources
-C:\Users\thang\Source\Repos\pthngws\QLSV\bin\Debug\ReportCrs.rdlc
-C:\Users\thang\Source\Repos\pthngws\QLSV\bin\Debug\ReportStd.rdlc
 C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.ReportScoreFrm.resources
-C:\Users\thang\Source\Repos\pthngws\QLSV\bin\Debug\ReportScr.rdlc
+C:\Users\thang\Source\Repos\pthngws\QLSV\bin\Debug\Course\Report\ReportCrs.rdlc
+C:\Users\thang\Source\Repos\pthngws\QLSV\bin\Debug\Score\Report\ReportScr.rdlc
+C:\Users\thang\Source\Repos\pthngws\QLSV\bin\Debug\Student\Report\ReportStd.rdlc

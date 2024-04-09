@@ -57,7 +57,7 @@ namespace QLSV
                 rToolStripMenuItem.Visible = false;
                 approveToolStripMenuItem.Visible = false;
                 aDMINToolStripMenuItem.Visible = false;
-      
+                manageToolStripMenuItem.Visible = false;
             }
         }
 

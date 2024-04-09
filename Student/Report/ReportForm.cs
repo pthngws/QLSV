@@ -36,7 +36,7 @@ namespace QLSV
                 tmp.Address = sv.address;
                 listReport.Add(tmp);
             }
-            reportViewer1.LocalReport.ReportPath = "ReportStd.rdlc";
+            reportViewer1.LocalReport.ReportPath = "C:\\Users\\thang\\Source\\Repos\\pthngws\\QLSV\\STUDENT\\Report\\ReportStd.rdlc";
             var source = new ReportDataSource("DataSetSTD", listReport);
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(source);

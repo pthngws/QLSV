@@ -34,7 +34,7 @@ namespace QLSV
 
                 listReport.Add(tmp);
             }
-            reportViewer1.LocalReport.ReportPath = "ReportCrs.rdlc";
+            reportViewer1.LocalReport.ReportPath = "C:\\Users\\thang\\Source\\Repos\\pthngws\\QLSV\\Course\\Report\\ReportCrs.rdlc";
             var source = new ReportDataSource("DataSetCRS", listReport);
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(source);
