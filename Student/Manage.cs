@@ -213,16 +213,8 @@ namespace QLSV
             // TODO: This line of code loads data into the 'baiTapWinformDataSet7.std' table. You can move, or remove it, as needed.
             // TODO: This line of code loads data into the 'baiTapWinformDataSet2.std' table. You can move, or remove it, as needed.
             SqlCommand cmd = new SqlCommand("SELECT * FROM std");
-            dataGridView1.DataSource = student.getStudents(cmd);
-            dataGridView1.ReadOnly = true;
-            DataGridViewImageColumn picCol = new DataGridViewImageColumn();
-            dataGridView1.RowTemplate.Height = 80;
+            fillGrid(cmd);
 
-            picCol = (DataGridViewImageColumn)dataGridView1.Columns[7];
-            picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
-            dataGridView1.AllowUserToAddRows = false;
-            label9.Text = "Total student:" + dataGridView1.Rows.Count;
-            label9.Text = "Total student:" + dataGridView1.Rows.Count;
 
         }
         public void fillGrid(SqlCommand command)
@@ -291,7 +283,9 @@ namespace QLSV
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("select * from std where concat(fname,lname,address) like'%" + textBoxSearch.Text + "%'");
+            SqlCommand cmd = new SqlCommand("SELECT * FROM std WHERE CONCAT(fname, ' ', lname, ' ', address) LIKE @searchTerm");
+            cmd.Parameters.AddWithValue("@searchTerm", "%" + textBoxSearch.Text + "%");
+
             fillGrid(cmd);
         }
 

@@ -135,6 +135,10 @@ namespace QLSV
             dt.Columns.Add("Fname");
             dt.Columns.Add("Lname");
             dt.Columns.Add("bdate");
+            dt.Columns.Add("Gender");
+            dt.Columns.Add("Phone");
+            dt.Columns.Add("Address");
+            dt.Columns.Add("Image");
 
             // Cài đặt LicenseContext ở đầu phương thức
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
@@ -151,16 +155,21 @@ namespace QLSV
                     string fname = worksheet.Cells[i, j++].Value?.ToString();
                     string lname = worksheet.Cells[i, j++].Value?.ToString();
                     var bdatetemp = worksheet.Cells[i, j++].Value;
+                    string gender = worksheet.Cells[i, j++].Value?.ToString();
+                    string phone = worksheet.Cells[i, j++].Value?.ToString();
+                    string address = worksheet.Cells[i, j++].Value?.ToString();
+                    string picture = worksheet.Cells[i, j++].Value?.ToString();
+
 
                     DateTime bdate;
                     if (DateTime.TryParse(bdatetemp?.ToString(), out bdate))
                     {
                         bdate = bdate.Date;
-                        dt.Rows.Add(mssv, fname, lname, bdate);
+                        dt.Rows.Add(mssv, fname, lname, bdate,gender,phone,address,picture);
                     }
                     else
                     {
-                        dt.Rows.Add(mssv, fname, lname, DBNull.Value);
+                        dt.Rows.Add(mssv, fname, lname, DBNull.Value, gender, phone, address,picture);
                     }
                 }
 
@@ -179,7 +188,13 @@ namespace QLSV
                 string fname = row["Fname"].ToString();
                 string lname = row["Lname"].ToString();
                 DateTime bdate = Convert.ToDateTime(row["bdate"]);
-
+                string gender = row["Gender"].ToString();
+                string phone = row["Phone"].ToString();
+                string address = row["Address"].ToString();
+                string picture = row["Image"].ToString();
+                byte[] imageData = System.IO.File.ReadAllBytes(picture);
+                SqlParameter imageParam = new SqlParameter("@ImageData", SqlDbType.Image);
+                imageParam.Value = imageData;
                 // Kiểm tra xem sinh viên đã tồn tại trong cơ sở dữ liệu chưa
                 string queryCheckStudent = "SELECT COUNT(*) FROM std WHERE id = @mssv";
                 SqlCommand cmdCheckStudent = new SqlCommand(queryCheckStudent, MY_DB.getConnection);
@@ -193,7 +208,7 @@ namespace QLSV
                 if (existingStudentCount == 0)
                 {
                     // Thực hiện truy vấn để chèn sinh viên mới vào cơ sở dữ liệu
-                    string queryInsertStudent = "INSERT INTO std (id, fname, lname, bdate) VALUES (@mssv, @fname, @lname, @bdate)";
+                    string queryInsertStudent = "INSERT INTO std (id, fname, lname, bdate,gender,phone,address,picture) VALUES (@mssv, @fname, @lname, @bdate,@gender,@phone,@address,@image)";
                     SqlCommand cmdInsertStudent = new SqlCommand(queryInsertStudent, MY_DB.getConnection);
                     MY_DB.closeConnection();
                     MY_DB.openConnection();
@@ -201,12 +216,27 @@ namespace QLSV
                     cmdInsertStudent.Parameters.AddWithValue("@fname", fname);
                     cmdInsertStudent.Parameters.AddWithValue("@lname", lname);
                     cmdInsertStudent.Parameters.AddWithValue("@bdate", bdate);
+                    cmdInsertStudent.Parameters.AddWithValue("@gender", gender);
+                    cmdInsertStudent.Parameters.AddWithValue("@phone", phone);
+                    cmdInsertStudent.Parameters.AddWithValue("@address", address);
+                    cmdInsertStudent.Parameters.AddWithValue("@image", imageData);
                     cmdInsertStudent.ExecuteNonQuery();
                 }
                 else
                 {
-                    // Sinh viên đã tồn tại trong cơ sở dữ liệu, bạn có thể thực hiện xử lý khác tùy thuộc vào yêu cầu của bạn, ví dụ: cập nhật thông tin
-                    // MessageBox.Show("Sinh viên với mã số sinh viên " + mssv + " đã tồn tại trong cơ sở dữ liệu.");
+                    string queryInsertStudent = "UPDATE std SET fname = @fname, lname = @lname, bdate = @bdate, gender = @gender, phone = @phone, address = @address, picture = @image WHERE id = @mssv";
+                    SqlCommand cmdInsertStudent = new SqlCommand(queryInsertStudent, MY_DB.getConnection);
+                    MY_DB.closeConnection();
+                    MY_DB.openConnection();
+                    cmdInsertStudent.Parameters.AddWithValue("@mssv", mssv);
+                    cmdInsertStudent.Parameters.AddWithValue("@fname", fname);
+                    cmdInsertStudent.Parameters.AddWithValue("@lname", lname);
+                    cmdInsertStudent.Parameters.AddWithValue("@bdate", bdate);
+                    cmdInsertStudent.Parameters.AddWithValue("@gender", gender);
+                    cmdInsertStudent.Parameters.AddWithValue("@phone", phone);
+                    cmdInsertStudent.Parameters.AddWithValue("@address", address);
+                    cmdInsertStudent.Parameters.AddWithValue("@image", imageData);
+                    cmdInsertStudent.ExecuteNonQuery();
                 }
                 SqlCommand cmd = new SqlCommand("Select * from std");
                 dataGridView1.DataSource = STUDENT.getStudents(cmd);
