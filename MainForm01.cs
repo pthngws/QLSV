@@ -57,7 +57,7 @@ namespace QLSV
                 rToolStripMenuItem.Visible = false;
                 approveToolStripMenuItem.Visible = false;
                 aDMINToolStripMenuItem.Visible = false;
-                
+      
             }
         }
 
@@ -143,6 +143,12 @@ namespace QLSV
         {
             PrintScore print = new PrintScore();
             print.Show();
+        }
+
+        private void reportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportForm report = new ReportForm();
+            report.Show();
         }
     }
 }

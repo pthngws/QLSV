@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLSV.Student;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -275,6 +276,11 @@ namespace QLSV
                 else
                 {
                     PictureBoxStudentImage.Image = null; // hoặc thiết lập hình ảnh mặc định khác
+                }
+                if (e.ColumnIndex == 8)
+                {
+                    Selected_CourseForm selected_CourseForm = new Selected_CourseForm(TextBoxID.Text);
+                    selected_CourseForm.Show();
                 }
             }
             catch (SqlException ex)

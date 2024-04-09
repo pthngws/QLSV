@@ -78,7 +78,7 @@
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.selected_course = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hh = new System.Windows.Forms.DataGridViewButtonColumn();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
@@ -425,7 +425,7 @@
             this.phoneDataGridViewTextBoxColumn,
             this.addressDataGridViewTextBoxColumn,
             this.pictureDataGridViewImageColumn,
-            this.selected_course});
+            this.hh});
             this.dataGridView1.DataSource = this.stdBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(502, 72);
             this.dataGridView1.Name = "dataGridView1";
@@ -587,14 +587,15 @@
             this.pictureDataGridViewImageColumn.MinimumWidth = 6;
             this.pictureDataGridViewImageColumn.Name = "pictureDataGridViewImageColumn";
             // 
-            // selected_course
+            // hh
             // 
-            this.selected_course.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.selected_course.DataPropertyName = "selected_course";
-            this.selected_course.FillWeight = 240.6417F;
-            this.selected_course.HeaderText = "Khóa học đã đăng ký";
-            this.selected_course.MinimumWidth = 6;
-            this.selected_course.Name = "selected_course";
+            this.hh.DataPropertyName = "View";
+            this.hh.HeaderText = "Selected_Course";
+            this.hh.MinimumWidth = 6;
+            this.hh.Name = "hh";
+            this.hh.Text = "View";
+            this.hh.ToolTipText = "View";
+            this.hh.UseColumnTextForButtonValue = true;
             // 
             // Manage
             // 
@@ -702,6 +703,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn pictureDataGridViewImageColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn selected_course;
+        private System.Windows.Forms.DataGridViewButtonColumn hh;
     }
 }

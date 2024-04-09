@@ -7,9 +7,16 @@ using System.Collections.Generic;
 
 namespace QLSV
 {
-    class STUDENT
+    public class STUDENT
     {
         MY_DB mydb = new MY_DB();
+        public int Id { get; set; }
+        public string Fname { get; set; }
+        public string Lname { get; set; }
+        public DateTime? date { get; set; }
+        public string Gender { get; set; }
+        public string Phone { get; set; }
+        public string Address { get; set; }
 
         static List<string> StringToList(string input, char delimiter)
         {

@@ -65,6 +65,11 @@ private void listBox1_Click(object sender, EventArgs e)
                 pos = pos + 1;
                 showData(pos);
             }
+            if(pos==(course.getAllCourses().Rows.Count-1))
+            {
+                showData(pos);
+                pos = -1;
+            }
         }
 
         private void buttonPrevious_Click(object sender, EventArgs e)
@@ -73,6 +78,11 @@ private void listBox1_Click(object sender, EventArgs e)
             {
                 pos = pos - 1;
                 showData((int)pos);
+            }
+            if (pos == 0)
+            {
+                showData(pos);
+                pos = course.getAllCourses().Rows.Count ;
             }
         }
 
