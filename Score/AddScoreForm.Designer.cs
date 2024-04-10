@@ -102,7 +102,7 @@
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(186, 28);
             this.textBoxID.TabIndex = 4;
-            this.textBoxID.TextChanged += new System.EventHandler(this.AddScoreForm_Load);
+            this.textBoxID.TextChanged += new System.EventHandler(this.textBoxID_TextChanged);
             // 
             // textBoxScore
             // 

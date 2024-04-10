@@ -44,13 +44,11 @@ namespace QLSV
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 // Kiểm tra hàng không phải hàng mới thêm vào
-                if (!row.IsNewRow)
-                {
+
                     // Lấy giá trị cột ID từ hàng
                     int id = Convert.ToInt32(row.Cells["idDataGridViewTextBoxColumn"].Value);
                     // Tạo giá trị email và đặt vào cột "email"
                     row.Cells["Email"].Value = id.ToString() + "@student.hcmute.edu.vn";
-                }
             }
 
 

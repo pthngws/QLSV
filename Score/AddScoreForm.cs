@@ -25,8 +25,7 @@ namespace QLSV
             // TODO: This line of code loads data into the 'baiTapWinformDataSet5.std' table. You can move, or remove it, as needed.
             SqlCommand sqlCommand = new SqlCommand("Select id,fname,lname from std");
             dataGridView1.DataSource = sTUDENT.getStudents(sqlCommand);
-            list = sTUDENT.selectedCourseStudent(textBoxID.Text);
-            comboBoxCourse.DataSource = list;
+
 
         }
         Score score = new Score();
@@ -108,6 +107,12 @@ namespace QLSV
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             textBoxID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            list = sTUDENT.selectedCourseStudent(textBoxID.Text);
+            comboBoxCourse.DataSource = list;
+        }
+
+        private void textBoxID_TextChanged(object sender, EventArgs e)
+        {
             list = sTUDENT.selectedCourseStudent(textBoxID.Text);
             comboBoxCourse.DataSource = list;
         }

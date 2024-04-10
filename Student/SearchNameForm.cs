@@ -142,7 +142,6 @@ namespace QLSV
         }
         private void Button_Refresh_Click(object sender, EventArgs e)
         {
-            this.stdTableAdapter.Fill(this.baiTapWinformDataSet1.std);
             SqlCommand cmd = new SqlCommand("select * from std");
             DataGridView.ReadOnly = true;
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();

@@ -110,7 +110,8 @@ namespace QLSV
                 if (score.insertOrUpdateScore(id, courseID, scoreValue, description))
                 {
                     MessageBox.Show("Thành công");
-                    button4_Click(sender, e);
+                    textBoxScore.Text = "";
+                    textBoxDesc.Text = "";
                 }
                 else
                 {

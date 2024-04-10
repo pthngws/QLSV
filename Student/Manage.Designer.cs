@@ -59,15 +59,6 @@
             this.buttonReset = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.hh = new System.Windows.Forms.DataGridViewButtonColumn();
             this.stdBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.baiTapWinformDataSet7 = new QLSV.BaiTapWinformDataSet7();
             this.stdBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -79,6 +70,15 @@
             this.buttonSearch = new System.Windows.Forms.Button();
             this.stdTableAdapter = new QLSV.BaiTapWinformDataSet2TableAdapters.stdTableAdapter();
             this.stdTableAdapter1 = new QLSV.BaiTapWinformDataSet7TableAdapters.stdTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.hh = new System.Windows.Forms.DataGridViewButtonColumn();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
@@ -100,7 +100,7 @@
             this.ButtonFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.ButtonFind.ForeColor = System.Drawing.Color.Black;
-            this.ButtonFind.Location = new System.Drawing.Point(358, 31);
+            this.ButtonFind.Location = new System.Drawing.Point(1381, 25);
             this.ButtonFind.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonFind.Name = "ButtonFind";
             this.ButtonFind.Size = new System.Drawing.Size(0, 0);
@@ -111,7 +111,7 @@
             // TextBoxID
             // 
             this.TextBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.TextBoxID.Location = new System.Drawing.Point(154, 31);
+            this.TextBoxID.Location = new System.Drawing.Point(1177, 25);
             this.TextBoxID.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxID.Multiline = true;
             this.TextBoxID.Name = "TextBoxID";
@@ -123,7 +123,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(24, 28);
+            this.label8.Location = new System.Drawing.Point(1047, 22);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(121, 25);
@@ -134,7 +134,7 @@
             // 
             this.GroupBox1.Controls.Add(this.RadioButtonFemale);
             this.GroupBox1.Controls.Add(this.RadioButtonMale);
-            this.GroupBox1.Location = new System.Drawing.Point(154, 218);
+            this.GroupBox1.Location = new System.Drawing.Point(1177, 212);
             this.GroupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -173,7 +173,7 @@
             this.Label7.AutoSize = true;
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Label7.Location = new System.Drawing.Point(25, 218);
+            this.Label7.Location = new System.Drawing.Point(1048, 212);
             this.Label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(90, 25);
@@ -187,7 +187,7 @@
             this.ButtonRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonRemove.ForeColor = System.Drawing.Color.Black;
-            this.ButtonRemove.Location = new System.Drawing.Point(378, 654);
+            this.ButtonRemove.Location = new System.Drawing.Point(1365, 681);
             this.ButtonRemove.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonRemove.Name = "ButtonRemove";
             this.ButtonRemove.Size = new System.Drawing.Size(161, 56);
@@ -203,7 +203,7 @@
             this.ButtonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonEdit.ForeColor = System.Drawing.Color.Black;
-            this.ButtonEdit.Location = new System.Drawing.Point(189, 654);
+            this.ButtonEdit.Location = new System.Drawing.Point(1176, 681);
             this.ButtonEdit.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonEdit.Name = "ButtonEdit";
             this.ButtonEdit.Size = new System.Drawing.Size(161, 56);
@@ -216,7 +216,7 @@
             // 
             this.ButtonUploadImage.BackColor = System.Drawing.Color.Yellow;
             this.ButtonUploadImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonUploadImage.Location = new System.Drawing.Point(153, 579);
+            this.ButtonUploadImage.Location = new System.Drawing.Point(1176, 573);
             this.ButtonUploadImage.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonUploadImage.Name = "ButtonUploadImage";
             this.ButtonUploadImage.Size = new System.Drawing.Size(148, 43);
@@ -228,7 +228,7 @@
             // TextBoxAddress
             // 
             this.TextBoxAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxAddress.Location = new System.Drawing.Point(154, 336);
+            this.TextBoxAddress.Location = new System.Drawing.Point(1177, 330);
             this.TextBoxAddress.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxAddress.Multiline = true;
             this.TextBoxAddress.Name = "TextBoxAddress";
@@ -240,7 +240,7 @@
             this.Label5.AutoSize = true;
             this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Label5.Location = new System.Drawing.Point(24, 336);
+            this.Label5.Location = new System.Drawing.Point(1047, 330);
             this.Label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(99, 25);
@@ -252,7 +252,7 @@
             this.Label4.AutoSize = true;
             this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Label4.Location = new System.Drawing.Point(25, 285);
+            this.Label4.Location = new System.Drawing.Point(1048, 279);
             this.Label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(81, 25);
@@ -264,7 +264,7 @@
             this.DateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.DateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTimePicker1.Location = new System.Drawing.Point(155, 179);
+            this.DateTimePicker1.Location = new System.Drawing.Point(1178, 173);
             this.DateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.DateTimePicker1.Name = "DateTimePicker1";
             this.DateTimePicker1.Size = new System.Drawing.Size(316, 30);
@@ -275,7 +275,7 @@
             this.Label3.AutoSize = true;
             this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Label3.Location = new System.Drawing.Point(24, 179);
+            this.Label3.Location = new System.Drawing.Point(1047, 173);
             this.Label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(108, 25);
@@ -285,7 +285,7 @@
             // TextBoxLname
             // 
             this.TextBoxLname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxLname.Location = new System.Drawing.Point(154, 127);
+            this.TextBoxLname.Location = new System.Drawing.Point(1177, 121);
             this.TextBoxLname.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxLname.Multiline = true;
             this.TextBoxLname.Name = "TextBoxLname";
@@ -297,7 +297,7 @@
             this.Label2.AutoSize = true;
             this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Label2.Location = new System.Drawing.Point(25, 127);
+            this.Label2.Location = new System.Drawing.Point(1048, 121);
             this.Label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(122, 25);
@@ -307,7 +307,7 @@
             // TextBoxFname
             // 
             this.TextBoxFname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxFname.Location = new System.Drawing.Point(154, 76);
+            this.TextBoxFname.Location = new System.Drawing.Point(1177, 70);
             this.TextBoxFname.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxFname.Multiline = true;
             this.TextBoxFname.Name = "TextBoxFname";
@@ -319,7 +319,7 @@
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Label1.Location = new System.Drawing.Point(25, 76);
+            this.Label1.Location = new System.Drawing.Point(1048, 70);
             this.Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(123, 25);
@@ -331,7 +331,7 @@
             this.Label6.AutoSize = true;
             this.Label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Label6.Location = new System.Drawing.Point(24, 402);
+            this.Label6.Location = new System.Drawing.Point(1047, 396);
             this.Label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label6.Name = "Label6";
             this.Label6.Size = new System.Drawing.Size(86, 25);
@@ -341,7 +341,7 @@
             // TextBoxPhone
             // 
             this.TextBoxPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxPhone.Location = new System.Drawing.Point(154, 291);
+            this.TextBoxPhone.Location = new System.Drawing.Point(1177, 285);
             this.TextBoxPhone.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxPhone.Multiline = true;
             this.TextBoxPhone.Name = "TextBoxPhone";
@@ -371,7 +371,7 @@
             // PictureBoxStudentImage
             // 
             this.PictureBoxStudentImage.BackColor = System.Drawing.Color.White;
-            this.PictureBoxStudentImage.Location = new System.Drawing.Point(153, 402);
+            this.PictureBoxStudentImage.Location = new System.Drawing.Point(1176, 396);
             this.PictureBoxStudentImage.Margin = new System.Windows.Forms.Padding(4);
             this.PictureBoxStudentImage.Name = "PictureBoxStudentImage";
             this.PictureBoxStudentImage.Size = new System.Drawing.Size(316, 169);
@@ -386,7 +386,7 @@
             this.buttonReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReset.ForeColor = System.Drawing.Color.Black;
-            this.buttonReset.Location = new System.Drawing.Point(572, 654);
+            this.buttonReset.Location = new System.Drawing.Point(18, 681);
             this.buttonReset.Margin = new System.Windows.Forms.Padding(4);
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(161, 56);
@@ -402,7 +402,7 @@
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.ForeColor = System.Drawing.Color.Black;
-            this.buttonAdd.Location = new System.Drawing.Point(7, 654);
+            this.buttonAdd.Location = new System.Drawing.Point(994, 681);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(161, 56);
@@ -427,14 +427,101 @@
             this.pictureDataGridViewImageColumn,
             this.hh});
             this.dataGridView1.DataSource = this.stdBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(502, 72);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 72);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1025, 546);
+            this.dataGridView1.Size = new System.Drawing.Size(974, 546);
             this.dataGridView1.TabIndex = 79;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // stdBindingSource1
+            // 
+            this.stdBindingSource1.DataMember = "std";
+            this.stdBindingSource1.DataSource = this.baiTapWinformDataSet7;
+            // 
+            // baiTapWinformDataSet7
+            // 
+            this.baiTapWinformDataSet7.DataSetName = "BaiTapWinformDataSet7";
+            this.baiTapWinformDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // stdBindingSource
+            // 
+            this.stdBindingSource.DataMember = "std";
+            this.stdBindingSource.DataSource = this.baiTapWinformDataSet2;
+            // 
+            // baiTapWinformDataSet2
+            // 
+            this.baiTapWinformDataSet2.DataSetName = "BaiTapWinformDataSet2";
+            this.baiTapWinformDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // buttonDown
+            // 
+            this.buttonDown.BackColor = System.Drawing.Color.Yellow;
+            this.buttonDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDown.Location = new System.Drawing.Point(1322, 573);
+            this.buttonDown.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonDown.Name = "buttonDown";
+            this.buttonDown.Size = new System.Drawing.Size(172, 43);
+            this.buttonDown.TabIndex = 80;
+            this.buttonDown.Text = "Download Image";
+            this.buttonDown.UseVisualStyleBackColor = false;
+            this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label9.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(835, 632);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 25);
+            this.label9.TabIndex = 81;
+            this.label9.Text = "label9";
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxSearch.Location = new System.Drawing.Point(159, 11);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSearch.Multiline = true;
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(315, 37);
+            this.textBoxSearch.TabIndex = 82;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label10.Location = new System.Drawing.Point(13, 14);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(106, 25);
+            this.label10.TabIndex = 83;
+            this.label10.Text = "Tìm kiếm:";
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearch.Location = new System.Drawing.Point(492, 5);
+            this.buttonSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(100, 46);
+            this.buttonSearch.TabIndex = 84;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // stdTableAdapter
+            // 
+            this.stdTableAdapter.ClearBeforeFill = true;
+            // 
+            // stdTableAdapter1
+            // 
+            this.stdTableAdapter1.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -503,99 +590,12 @@
             // hh
             // 
             this.hh.DataPropertyName = "View";
-            this.hh.HeaderText = "Selected_Course";
+            this.hh.HeaderText = "Khóa học đã đăng ký";
             this.hh.MinimumWidth = 6;
             this.hh.Name = "hh";
             this.hh.Text = "View";
             this.hh.ToolTipText = "View";
             this.hh.UseColumnTextForButtonValue = true;
-            // 
-            // stdBindingSource1
-            // 
-            this.stdBindingSource1.DataMember = "std";
-            this.stdBindingSource1.DataSource = this.baiTapWinformDataSet7;
-            // 
-            // baiTapWinformDataSet7
-            // 
-            this.baiTapWinformDataSet7.DataSetName = "BaiTapWinformDataSet7";
-            this.baiTapWinformDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stdBindingSource
-            // 
-            this.stdBindingSource.DataMember = "std";
-            this.stdBindingSource.DataSource = this.baiTapWinformDataSet2;
-            // 
-            // baiTapWinformDataSet2
-            // 
-            this.baiTapWinformDataSet2.DataSetName = "BaiTapWinformDataSet2";
-            this.baiTapWinformDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // buttonDown
-            // 
-            this.buttonDown.BackColor = System.Drawing.Color.Yellow;
-            this.buttonDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDown.Location = new System.Drawing.Point(299, 579);
-            this.buttonDown.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonDown.Name = "buttonDown";
-            this.buttonDown.Size = new System.Drawing.Size(172, 43);
-            this.buttonDown.TabIndex = 80;
-            this.buttonDown.Text = "Download Image";
-            this.buttonDown.UseVisualStyleBackColor = false;
-            this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label9.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1227, 654);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 25);
-            this.label9.TabIndex = 81;
-            this.label9.Text = "label9";
-            // 
-            // textBoxSearch
-            // 
-            this.textBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxSearch.Location = new System.Drawing.Point(663, 28);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxSearch.Multiline = true;
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(315, 37);
-            this.textBoxSearch.TabIndex = 82;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(517, 31);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(106, 25);
-            this.label10.TabIndex = 83;
-            this.label10.Text = "Tìm kiếm:";
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearch.Location = new System.Drawing.Point(996, 22);
-            this.buttonSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(100, 46);
-            this.buttonSearch.TabIndex = 84;
-            this.buttonSearch.Text = "Search";
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
-            // stdTableAdapter
-            // 
-            this.stdTableAdapter.ClearBeforeFill = true;
-            // 
-            // stdTableAdapter1
-            // 
-            this.stdTableAdapter1.ClearBeforeFill = true;
             // 
             // Manage
             // 

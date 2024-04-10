@@ -372,7 +372,7 @@
             // 
             // buttonAddCourse
             // 
-            this.buttonAddCourse.BackColor = System.Drawing.Color.Lime;
+            this.buttonAddCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.buttonAddCourse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
