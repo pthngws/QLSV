@@ -35,15 +35,19 @@
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.hRBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.baiTapWinformDataSet13 = new QLSV.BaiTapWinformDataSet13();
             this.loginBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.baiTapWinformDataSet6 = new QLSV.BaiTapWinformDataSet6();
             this.log_inTableAdapter = new QLSV.BaiTapWinformDataSet6TableAdapters.log_inTableAdapter();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.radioButtonHR = new System.Windows.Forms.RadioButton();
+            this.radioButtonSTD = new System.Windows.Forms.RadioButton();
+            this.hRTableAdapter = new QLSV.BaiTapWinformDataSet13TableAdapters.HRTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.approveBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hRBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet6)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +69,7 @@
             // buttonAdd
             // 
             this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.buttonAdd.Location = new System.Drawing.Point(63, 449);
+            this.buttonAdd.Location = new System.Drawing.Point(63, 521);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(179, 55);
@@ -77,7 +81,7 @@
             // buttonDelete
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.buttonDelete.Location = new System.Drawing.Point(323, 449);
+            this.buttonDelete.Location = new System.Drawing.Point(323, 521);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(179, 55);
@@ -88,15 +92,9 @@
             // 
             // dataGridView2
             // 
-            this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.usernameDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.loginBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 16);
+            this.dataGridView2.Location = new System.Drawing.Point(12, 88);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
@@ -106,6 +104,16 @@
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // hRBindingSource
+            // 
+            this.hRBindingSource.DataMember = "HR";
+            this.hRBindingSource.DataSource = this.baiTapWinformDataSet13;
+            // 
+            // baiTapWinformDataSet13
+            // 
+            this.baiTapWinformDataSet13.DataSetName = "BaiTapWinformDataSet13";
+            this.baiTapWinformDataSet13.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // loginBindingSource
             // 
@@ -121,33 +129,41 @@
             // 
             this.log_inTableAdapter.ClearBeforeFill = true;
             // 
-            // usernameDataGridViewTextBoxColumn
+            // radioButtonHR
             // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "Tên đăng nhập";
-            this.usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.radioButtonHR.AutoSize = true;
+            this.radioButtonHR.Location = new System.Drawing.Point(341, 28);
+            this.radioButtonHR.Name = "radioButtonHR";
+            this.radioButtonHR.Size = new System.Drawing.Size(53, 25);
+            this.radioButtonHR.TabIndex = 10;
+            this.radioButtonHR.Text = "HR";
+            this.radioButtonHR.UseVisualStyleBackColor = true;
             // 
-            // emailDataGridViewTextBoxColumn
+            // radioButtonSTD
             // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.radioButtonSTD.AutoSize = true;
+            this.radioButtonSTD.Checked = true;
+            this.radioButtonSTD.Location = new System.Drawing.Point(181, 28);
+            this.radioButtonSTD.Name = "radioButtonSTD";
+            this.radioButtonSTD.Size = new System.Drawing.Size(96, 25);
+            this.radioButtonSTD.TabIndex = 9;
+            this.radioButtonSTD.TabStop = true;
+            this.radioButtonSTD.Text = "Student";
+            this.radioButtonSTD.UseVisualStyleBackColor = true;
+            this.radioButtonSTD.CheckedChanged += new System.EventHandler(this.radioButtonSTD_CheckedChanged);
             // 
-            // statusDataGridViewTextBoxColumn
+            // hRTableAdapter
             // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Trạng thái";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.hRTableAdapter.ClearBeforeFill = true;
             // 
             // Approve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cyan;
-            this.ClientSize = new System.Drawing.Size(581, 529);
+            this.ClientSize = new System.Drawing.Size(582, 612);
+            this.Controls.Add(this.radioButtonHR);
+            this.Controls.Add(this.radioButtonSTD);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonAdd);
@@ -159,9 +175,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.approveBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hRBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.baiTapWinformDataSet6)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -175,8 +194,10 @@
         private BaiTapWinformDataSet6 baiTapWinformDataSet6;
         private System.Windows.Forms.BindingSource loginBindingSource;
         private BaiTapWinformDataSet6TableAdapters.log_inTableAdapter log_inTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.RadioButton radioButtonHR;
+        private System.Windows.Forms.RadioButton radioButtonSTD;
+        private BaiTapWinformDataSet13 baiTapWinformDataSet13;
+        private System.Windows.Forms.BindingSource hRBindingSource;
+        private BaiTapWinformDataSet13TableAdapters.HRTableAdapter hRTableAdapter;
     }
 }

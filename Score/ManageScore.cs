@@ -38,7 +38,7 @@ namespace QLSV
         STUDENT std = new STUDENT();
         private void button3_Click(object sender, EventArgs e)
         {
-            SqlCommand sqlCommand = new SqlCommand("Select id,fname,lname from std");
+            SqlCommand sqlCommand = new SqlCommand("Select id as MSSV,fname as Họ,lname as Tên from std");
             dataGridView2.DataSource = std.getStudents(sqlCommand);
         }
         private void buttonAdd_Click(object sender, EventArgs e)

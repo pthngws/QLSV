@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Course"
+    "\\Course",
+    "\\Result",
+    "\\Score",
+    "\\Student"
   ],
-  "SelectedNode": "\\Course\\CourseStdList.cs",
+  "SelectedNode": "\\EditContact.cs",
   "PreviewInSolutionExplorer": false
 }

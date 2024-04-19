@@ -20,64 +20,94 @@ namespace QLSV
 
         private void Approve_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'baiTapWinformDataSet6.log_in' table. You can move, or remove it, as needed.
-            this.log_inTableAdapter.Fill(this.baiTapWinformDataSet6.log_in);
-            // TODO: This line of code loads data into the 'baiTapWinformDataSet1.Approve' table. You can move, or remove it, as needed.
-            this.approveTableAdapter.Fill(this.baiTapWinformDataSet1.Approve);
-
+            // Load dữ liệu dựa trên radio button được chọn
+            if (radioButtonSTD.Checked)
+            {
+                // Load dữ liệu vào bảng log_in
+                this.log_inTableAdapter.Fill(this.baiTapWinformDataSet6.log_in);
+                // Thiết lập DataSource của DataGridView thành bảng log_in trong dataset
+                dataGridView2.DataSource = this.baiTapWinformDataSet6.log_in;
+            }
+            else if (radioButtonHR.Checked)
+            {
+                // Load dữ liệu vào bảng HR
+                this.hRTableAdapter.Fill(this.baiTapWinformDataSet13.HR);
+                // Thiết lập DataSource của DataGridView thành bảng HR trong dataset
+                dataGridView2.DataSource = this.baiTapWinformDataSet13.HR;
+            }
         }
 
-        private User user;
+
+
+        string username;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-             string username = dataGridView2.CurrentRow.Cells[0].Value.ToString();
-            user = new User(username);
+             username = dataGridView2.CurrentRow.Cells[0].Value.ToString();
+
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (user == null || user.Username == null)
-            {
-                MessageBox.Show("Vui lòng chọn user");
+            MessageBox.Show(username);
+            if (radioButtonSTD.Checked)
+            {        User user = new User();
+     
+
+                    if (user.ApproveUser(username))
+                    {
+                        MessageBox.Show("Đã thêm thành công!");
+                        Approve_Load(sender, e);
+                    }
+
             }
-            else
+            else if(radioButtonHR.Checked)
             {
-                if (user.ApproveUser())
-                {
-                    MessageBox.Show("Đã thêm thành công!");
-                    user.Username = null;
-                    user.Password = null;
-                    user.Email = null;
-                    user.Role = null;
-                    this.approveTableAdapter.Fill(this.baiTapWinformDataSet1.Approve);
-                    Approve_Load(sender, e);
-                }
+                HR hr = new HR();
+
+                    if (hr.ApproveHR(username))
+                    {
+                        MessageBox.Show("Đã thêm thành công!");
+                        
+                        Approve_Load(sender, e);
+                    }
+
             }
         }
 
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            if (user == null || user.Username == null)
+            MessageBox.Show(username);
+            if (radioButtonSTD.Checked)
             {
-                MessageBox.Show("Vui lòng chọn user");
-            }
-            else
-            {
+                User user = new User();
                 if (user.deleteUser(user.Username))
-                {
-                    MessageBox.Show("Đã xóa thành công!");
+                    {
+                        MessageBox.Show("Đã xóa thành công!");
 
-                    // Clear the properties of the existing User object
-                    user.Username = null;
-                    user.Password = null;
-                    user.Email = null;
-                    user.Role = null;
 
-                    this.approveTableAdapter.Fill(this.baiTapWinformDataSet1.Approve);
-                    Approve_Load(sender, e);
+
+
+                        Approve_Load(sender, e);
+                    }
+              }
+
+            else if (radioButtonHR.Checked) {
+
+                HR hr = new HR();
+                if (hr.deleteHR(username))
+                    {
+                        MessageBox.Show("Đã xóa thành công!");
+                        hr = null;
+                        Approve_Load(sender, e);
+                    }
                 }
-            }
+
+        }
+
+        private void radioButtonSTD_CheckedChanged(object sender, EventArgs e)
+        {
+            Approve_Load(sender, e);
         }
     }
 }

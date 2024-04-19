@@ -67,6 +67,9 @@
             this.reportToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.aDMINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.approveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rESULTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aVGRESULTBYSCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sTATICRESULTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,7 +82,8 @@
             this.sTUDENTToolStripMenuItem,
             this.cOURSEToolStripMenuItem,
             this.sCOREToolStripMenuItem,
-            this.aDMINToolStripMenuItem});
+            this.aDMINToolStripMenuItem,
+            this.rESULTToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(934, 35);
@@ -407,9 +411,32 @@
             this.approveToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.approveToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.approveToolStripMenuItem.Name = "approveToolStripMenuItem";
-            this.approveToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.approveToolStripMenuItem.Size = new System.Drawing.Size(186, 32);
             this.approveToolStripMenuItem.Text = "Approve";
             this.approveToolStripMenuItem.Click += new System.EventHandler(this.approveToolStripMenuItem_Click);
+            // 
+            // rESULTToolStripMenuItem
+            // 
+            this.rESULTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aVGRESULTBYSCOREToolStripMenuItem,
+            this.sTATICRESULTToolStripMenuItem});
+            this.rESULTToolStripMenuItem.Name = "rESULTToolStripMenuItem";
+            this.rESULTToolStripMenuItem.Size = new System.Drawing.Size(117, 31);
+            this.rESULTToolStripMenuItem.Text = "RESULT";
+            // 
+            // aVGRESULTBYSCOREToolStripMenuItem
+            // 
+            this.aVGRESULTBYSCOREToolStripMenuItem.Name = "aVGRESULTBYSCOREToolStripMenuItem";
+            this.aVGRESULTBYSCOREToolStripMenuItem.Size = new System.Drawing.Size(374, 32);
+            this.aVGRESULTBYSCOREToolStripMenuItem.Text = "AVG RESULT BY SCORE";
+            this.aVGRESULTBYSCOREToolStripMenuItem.Click += new System.EventHandler(this.aVGRESULTBYSCOREToolStripMenuItem_Click);
+            // 
+            // sTATICRESULTToolStripMenuItem
+            // 
+            this.sTATICRESULTToolStripMenuItem.Name = "sTATICRESULTToolStripMenuItem";
+            this.sTATICRESULTToolStripMenuItem.Size = new System.Drawing.Size(374, 32);
+            this.sTATICRESULTToolStripMenuItem.Text = "STATIC RESULT";
+            this.sTATICRESULTToolStripMenuItem.Click += new System.EventHandler(this.sTATICRESULTToolStripMenuItem_Click);
             // 
             // MainForm01
             // 
@@ -473,5 +500,8 @@
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem rESULTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aVGRESULTBYSCOREToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sTATICRESULTToolStripMenuItem;
     }
 }

@@ -134,7 +134,7 @@ namespace QLSV
                 }
             }
         }
-        public bool ApproveUser()
+        public bool ApproveUser(string username)
         {
             string status= "Da xac thuc";
 

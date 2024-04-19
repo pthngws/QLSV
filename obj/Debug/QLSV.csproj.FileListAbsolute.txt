@@ -161,3 +161,10 @@ C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.ReportScoreFrm.resources
 C:\Users\thang\Source\Repos\pthngws\QLSV\bin\Debug\Course\Report\ReportCrs.rdlc
 C:\Users\thang\Source\Repos\pthngws\QLSV\bin\Debug\Score\Report\ReportScr.rdlc
 C:\Users\thang\Source\Repos\pthngws\QLSV\bin\Debug\Student\Report\ReportStd.rdlc
+C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.AVGResultBySCore.resources
+C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.StaticResult.resources
+C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.SignUpHRForm.resources
+C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.HRForm.resources
+C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.AddContactForm.resources
+C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.SelectContact.resources
+C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.EditContact.resources

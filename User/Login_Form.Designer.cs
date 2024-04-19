@@ -43,6 +43,8 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.radioButtonSTD = new System.Windows.Forms.RadioButton();
+            this.radioButtonHR = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
@@ -182,12 +184,37 @@
             this.linkLabel1.Text = "Forgot Password";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // radioButtonSTD
+            // 
+            this.radioButtonSTD.AutoSize = true;
+            this.radioButtonSTD.Checked = true;
+            this.radioButtonSTD.Location = new System.Drawing.Point(366, 125);
+            this.radioButtonSTD.Name = "radioButtonSTD";
+            this.radioButtonSTD.Size = new System.Drawing.Size(73, 20);
+            this.radioButtonSTD.TabIndex = 7;
+            this.radioButtonSTD.TabStop = true;
+            this.radioButtonSTD.Text = "Student";
+            this.radioButtonSTD.UseVisualStyleBackColor = true;
+            this.radioButtonSTD.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButtonHR
+            // 
+            this.radioButtonHR.AutoSize = true;
+            this.radioButtonHR.Location = new System.Drawing.Point(550, 125);
+            this.radioButtonHR.Name = "radioButtonHR";
+            this.radioButtonHR.Size = new System.Drawing.Size(48, 20);
+            this.radioButtonHR.TabIndex = 8;
+            this.radioButtonHR.Text = "HR";
+            this.radioButtonHR.UseVisualStyleBackColor = true;
+            // 
             // Login_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(753, 450);
+            this.Controls.Add(this.radioButtonHR);
+            this.Controls.Add(this.radioButtonSTD);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.linkLabel_SignUp);
@@ -227,6 +254,8 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.RadioButton radioButtonHR;
+        private System.Windows.Forms.RadioButton radioButtonSTD;
     }
 }
 

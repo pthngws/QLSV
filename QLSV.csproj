@@ -105,6 +105,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddContactForm.Designer.cs">
+      <DependentUpon>AddContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaiTapWinformDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaiTapWinformDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.cs" />
+    <Compile Include="EditContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditContact.Designer.cs">
+      <DependentUpon>EditContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="Group.cs" />
+    <Compile Include="HRForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRForm.Designer.cs">
+      <DependentUpon>HRForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Result\AVGResultByScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Result\AVGResultByScore.Designer.cs">
+      <DependentUpon>AVGResultByScore.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaiTapWinformDataSet10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,6 +172,24 @@
     </Compile>
     <Compile Include="Course\Report\ReportCrsForm.Designer.cs">
       <DependentUpon>ReportCrsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Result\StaticResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Result\StaticResult.Designer.cs">
+      <DependentUpon>StaticResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectContact.Designer.cs">
+      <DependentUpon>SelectContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignUpHRForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUpHRForm.Designer.cs">
+      <DependentUpon>SignUpHRForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Student\Report\ReportForm.cs">
       <SubType>Form</SubType>
@@ -295,6 +345,7 @@
     <Compile Include="User\ForgotPassword.Designer.cs">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\HR.cs" />
     <Compile Include="User\Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -360,6 +411,18 @@
       <DependentUpon>UpdateDeleteStudentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="User\User.cs" />
+    <EmbeddedResource Include="AddContactForm.resx">
+      <DependentUpon>AddContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditContact.resx">
+      <DependentUpon>EditContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRForm.resx">
+      <DependentUpon>HRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Result\AVGResultByScore.resx">
+      <DependentUpon>AVGResultByScore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Course\AddCourse.resx">
       <DependentUpon>AddCourse.cs</DependentUpon>
     </EmbeddedResource>
@@ -374,6 +437,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Course\Report\ReportCrsForm.resx">
       <DependentUpon>ReportCrsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Result\StaticResult.resx">
+      <DependentUpon>StaticResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectContact.resx">
+      <DependentUpon>SelectContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUpHRForm.resx">
+      <DependentUpon>SignUpHRForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Report\ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
@@ -520,6 +592,17 @@
     </None>
     <None Include="BaiTapWinformDataSet12.xss">
       <DependentUpon>BaiTapWinformDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet13.xsc">
+      <DependentUpon>BaiTapWinformDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaiTapWinformDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaiTapWinformDataSet13.xss">
+      <DependentUpon>BaiTapWinformDataSet13.xsd</DependentUpon>
     </None>
     <None Include="BaiTapWinformDataSet2.xsc">
       <DependentUpon>BaiTapWinformDataSet2.xsd</DependentUpon>

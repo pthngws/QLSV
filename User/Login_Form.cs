@@ -40,12 +40,26 @@ namespace QLSV
             }
             if (flag)
             {
-                User user = new User(TextBoxUsername.Text, TextBoxPassword.Text);
-                if (user.LoginUser() != null)
+                if (radioButtonSTD.Checked == true)
                 {
-                    MainForm01 main = new MainForm01(user.LoginUser());
-                    main.Show();
-                    this.Hide();
+                    User user = new User(TextBoxUsername.Text, TextBoxPassword.Text);
+                    if (user.LoginUser() != null)
+                    {
+                        MainForm01 main = new MainForm01(user.LoginUser());
+                        main.Show();
+                        this.Hide();
+                    }
+                }
+                else 
+                {
+                    HR hr = new HR();
+                    if(hr.LoginHr(TextBoxUsername.Text, TextBoxPassword.Text))
+                    {
+                        Global.setUserID(TextBoxUsername.Text);
+                        HRForm hr1 = new HRForm();
+                        hr1.Show();
+                        this.Hide();
+                    }
                 }
             }
         }
@@ -54,9 +68,18 @@ namespace QLSV
 
         private void linkLabel_SignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            SignUpForm form = new SignUpForm();
-            form.Show();
-            this.Hide();
+            if (radioButtonSTD.Checked == true)
+            {
+                SignUpForm form = new SignUpForm();
+                form.Show();
+                this.Hide();
+            }
+            else
+            {
+                SignUpHRForm form = new SignUpHRForm();
+                form.Show();
+                this.Hide();
+            }
         }
 
         private void btt_Cancel_Click(object sender, EventArgs e)
@@ -68,6 +91,11 @@ namespace QLSV
         {
             ForgotPassword forgotPassword = new ForgotPassword();   
             forgotPassword.Show();
+        }
+        
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

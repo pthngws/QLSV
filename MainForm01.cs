@@ -162,5 +162,17 @@ namespace QLSV
             ReportScoreFrm reportCrsForm = new ReportScoreFrm();
             reportCrsForm.Show();
         }
+
+        private void aVGRESULTBYSCOREToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AVGResultBySCore aVG = new AVGResultBySCore();
+            aVG.Show();
+        }
+
+        private void sTATICRESULTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticResult staticResult = new StaticResult();
+            staticResult.Show();
+        }
     }
 }

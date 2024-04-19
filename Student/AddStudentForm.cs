@@ -167,5 +167,95 @@ namespace QLSV
         {
 
         }
+
+        private void RadioButtonMale_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RadioButtonFemale_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GroupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBoxAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBoxPhone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBoxLname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBoxFname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtStudentID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBoxStudentImage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
