@@ -123,6 +123,7 @@
             // 
             // comboBoxCourse
             // 
+            this.comboBoxCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCourse.FormattingEnabled = true;
             this.comboBoxCourse.Location = new System.Drawing.Point(793, 98);
             this.comboBoxCourse.Margin = new System.Windows.Forms.Padding(4);

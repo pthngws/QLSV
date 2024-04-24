@@ -111,12 +111,24 @@
     <Compile Include="AddContactForm.Designer.cs">
       <DependentUpon>AddContactForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditIFHR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditIFHR.Designer.cs">
+      <DependentUpon>EditIFHR.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaiTapWinformDataSet13.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BaiTapWinformDataSet13.xsd</DependentUpon>
     </Compile>
     <Compile Include="Contact.cs" />
+    <Compile Include="ContactCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactCourse.Designer.cs">
+      <DependentUpon>ContactCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditContact.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +142,12 @@
     </Compile>
     <Compile Include="HRForm.Designer.cs">
       <DependentUpon>HRForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HRShowFull.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRShowFull.Designer.cs">
+      <DependentUpon>HRShowFull.cs</DependentUpon>
     </Compile>
     <Compile Include="Result\AVGResultByScore.cs">
       <SubType>Form</SubType>
@@ -414,11 +432,20 @@
     <EmbeddedResource Include="AddContactForm.resx">
       <DependentUpon>AddContactForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContactCourse.resx">
+      <DependentUpon>ContactCourse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditContact.resx">
       <DependentUpon>EditContact.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditIFHR.resx">
+      <DependentUpon>EditIFHR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HRForm.resx">
       <DependentUpon>HRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRShowFull.resx">
+      <DependentUpon>HRShowFull.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Result\AVGResultByScore.resx">
       <DependentUpon>AVGResultByScore.cs</DependentUpon>

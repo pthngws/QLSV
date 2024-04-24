@@ -19,14 +19,66 @@ namespace QLSV
             InitializeComponent();
         }
         HR hr = new HR();
+        bool ContainsNumbers(string input)
+        {
+            return input.Any(char.IsDigit);
+        }
+
+        bool IsNumeric(string input)
+        {
+            return int.TryParse(input, out _);
+        }
         private void ButtonSignUp_Click(object sender, EventArgs e)
         {
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            errorProvider3.Clear();
+            errorProvider4.Clear();
+
             string fname = TextBoxFname.Text.Trim();
             string lname = TextBoxLname.Text.Trim();
             string username = textBoxUsername.Text.Trim();
             string password = textBoxPassword.Text.Trim();
-            MemoryStream pic = new MemoryStream();
 
+            if (string.IsNullOrEmpty(fname))
+            {
+                errorProvider1.SetError(TextBoxFname, "First name is required.");
+                return;
+            }
+            if (ContainsNumbers(fname))
+            {
+                errorProvider1.SetError(TextBoxFname, "First name is required.");
+                return;
+            }
+            if (string.IsNullOrEmpty(lname))
+            {
+                errorProvider2.SetError(TextBoxLname, "Last name is required.");
+                return;
+            }
+
+            if (ContainsNumbers(lname))
+            {
+                errorProvider1.SetError(TextBoxLname, "Last name is required.");
+                return;
+            }
+            if (string.IsNullOrEmpty(username))
+            {
+                errorProvider3.SetError(textBoxUsername, "Username is required.");
+                return;
+            }
+            if (string.IsNullOrEmpty(password))
+            {
+                errorProvider4.SetError(textBoxPassword, "Password is required.");
+                return;
+            }
+
+
+
+
+            // Your sign-up logic here
+
+            MemoryStream pic = new MemoryStream();
+            
             // Kiểm tra xem có hình ảnh nào được chọn không
             if (PictureBoxStudentImage.Image != null)
             {

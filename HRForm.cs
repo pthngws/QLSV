@@ -43,10 +43,11 @@ namespace QLSV
             sqlDataAdapter.Fill(dt);
             if(dt.Rows.Count > 0 )
             {
+                string fullname = dt.Rows[0]["fname"].ToString() +" " +dt.Rows[0]["lname"].ToString();
                 byte[] pic = (byte[])dt.Rows[0]["picture"];
                 MemoryStream pictue = new MemoryStream(pic);
                 pictureBox1.Image = Image.FromStream(pictue);
-                label1.Text = "Welcome Back, " + dt.Rows[0]["username"].ToString();
+                label1.Text = "Welcome Back, " +fullname;
             }
         }
 
@@ -71,15 +72,36 @@ namespace QLSV
 
         private void button6_Click(object sender, EventArgs e)
         {
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            Group group = new Group();
+            // Lấy giá trị từ các ô textbox
             string groupname = textBoxGroupName.Text;
             string groupid = textBoxGroupID.Text;
-            Group group = new Group();
+
+            // Kiểm tra nếu trường dữ liệu groupname là rỗng
+            if (string.IsNullOrEmpty(groupname))
+            {
+                // Thiết lập thông báo lỗi cho ErrorProvider
+                errorProvider1.SetError(textBoxGroupName, "Group name is required.");
+                // Dừng lại và không tiếp tục xử lý
+                return;
+            }
+
+            // Kiểm tra nếu trường dữ liệu groupid là rỗng
+            else if (string.IsNullOrEmpty(groupid))
+            {
+                // Thiết lập thông báo lỗi cho ErrorProvider
+                errorProvider2.SetError(textBoxGroupID, "Group ID is required.");
+                // Dừng lại và không tiếp tục xử lý
+                return;
+            }
+    
             if(group.insertGroup(groupid, groupname,Global.GlobalUserID))
             {
               
                 MessageBox.Show("Thanh cong");
                 HRForm_Load(sender, e);
-
             }    
 
 
@@ -94,7 +116,11 @@ namespace QLSV
         Contact contact = new Contact();
         private void buttonRemove_Click(object sender, EventArgs e)
         {
-            if (contact.deleteContact(textBoxID.Text))
+            if(textBoxID.Text=="")
+            {
+                MessageBox.Show("Vui long chon ID");
+            }
+            else if (contact.deleteContact(textBoxID.Text))
             {
                 MessageBox.Show("ThanhCOng");
             } 
@@ -103,7 +129,13 @@ namespace QLSV
         Group group = new Group();
         private void button8_Click(object sender, EventArgs e)
         {
+            errorProvider3.Clear();
             string newname = textBox3.Text;
+            if(string.IsNullOrEmpty(newname))
+            {
+                errorProvider3.SetError(textBox3, "Vui long nhap");
+                return;
+            }
             if (group.updateGroup((string)comboBox1.SelectedValue, newname))
             {
                 MessageBox.Show("Thanh cong");
@@ -134,7 +166,8 @@ namespace QLSV
 
         private void buttonShow_Click(object sender, EventArgs e)
         {
-
+            HRShowFull hRShowFull = new HRShowFull();   
+            hRShowFull.ShowDialog();
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -230,6 +263,18 @@ namespace QLSV
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            HRForm_Load(sender, e);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EditIFHR editIFHR = new EditIFHR(); 
+            editIFHR.ShowDialog();
+            HRForm_Load(sender, e);
         }
     }
 }

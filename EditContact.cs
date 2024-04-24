@@ -73,8 +73,90 @@ namespace QLSV
 
         }
 
+        bool verif()
+        {
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            errorProvider3.Clear();
+            errorProvider4.Clear();
+            errorProvider5.Clear();
+            errorProvider6.Clear();
+            errorProvider10.Clear();
+            bool flag = true;
 
+            if (txtStudentID.Text.Trim() == "")
+            {
+                errorProvider1.SetError(txtStudentID, "Không được để trống");
+                flag = false;
+            }
+            else if (!IsNumeric(txtStudentID.Text.Trim()))
 
+            {
+                errorProvider1.SetError(txtStudentID, "Không được chứa chữ");
+                flag = false;
+            }
+
+            if (TextBoxFname.Text.Trim() == "")
+            {
+                errorProvider2.SetError(TextBoxFname, "Không được để trống");
+                flag = false;
+            }
+            else if (ContainsNumbers(TextBoxFname.Text))
+            {
+                errorProvider2.SetError(TextBoxFname, "Tên không được chứa số");
+                flag = false;
+            }
+
+            if (TextBoxLname.Text.Trim() == "")
+            {
+                errorProvider3.SetError(TextBoxLname, "Không được để trống");
+                flag = false;
+            }
+            else if (ContainsNumbers(TextBoxLname.Text))
+            {
+                errorProvider3.SetError(TextBoxLname, "Họ không được chứa số");
+                flag = false;
+            }
+
+            if (TextBoxAddress.Text.Trim() == "")
+            {
+                errorProvider4.SetError(TextBoxAddress, "Không được để trống");
+                flag = false;
+            }
+
+            if (TextBoxPhone.Text.Trim() == "")
+            {
+                errorProvider5.SetError(TextBoxPhone, "Không được để trống");
+                flag = false;
+            }
+            else if (!IsNumeric(TextBoxPhone.Text))
+            {
+                errorProvider5.SetError(TextBoxPhone, "Số điện thoại chỉ được chứa số");
+                flag = false;
+            }
+
+            if (textBoxEmail.Text.Trim() == "")
+            {
+                errorProvider10.SetError(textBoxEmail, "Không được để trống");
+                flag = false;
+            }
+            if (PictureBoxStudentImage.Image == null)
+            {
+                errorProvider6.SetError(PictureBoxStudentImage, "Không được để trống");
+                flag = false;
+            }
+
+            return flag;
+        }
+        bool ContainsNumbers(string input)
+        {
+            return input.Any(char.IsDigit);
+        }
+
+        bool IsNumeric(string input)
+        {
+            return int.TryParse(input, out _);
+        }
         private void ButtonAddStudent_Click(object sender, EventArgs e)
         {
             Contact contact = new Contact();
@@ -91,16 +173,19 @@ namespace QLSV
 
                 string groupid = (string)comboBox1.SelectedValue;
 
-                MemoryStream pic = new MemoryStream();
-                PictureBoxStudentImage.Image.Save(pic, PictureBoxStudentImage.Image.RawFormat);
-
-                if (contact.updateContact(id,fname,lname,phone,address,email,groupid,pic))
+              
+                if (verif())
                 {
-                    MessageBox.Show("Contact Inormation UpDated", "Edit Contact", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Error", "Add Contact", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MemoryStream pic = new MemoryStream();
+                    PictureBoxStudentImage.Image.Save(pic, PictureBoxStudentImage.Image.RawFormat);
+                    if (contact.updateContact(id, fname, lname, phone, address, email, groupid, pic))
+                    {
+                        MessageBox.Show("Contact Inormation UpDated", "Edit Contact", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error", "Add Contact", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)

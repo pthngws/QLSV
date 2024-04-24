@@ -157,17 +157,72 @@ namespace QLSV
                     string phone = worksheet.Cells[i, j++].Value?.ToString();
                     string address = worksheet.Cells[i, j++].Value?.ToString();
                     string picture = worksheet.Cells[i, j++].Value?.ToString();
+                    bool flag = true;
+                        
 
+                        if (mssv.Trim() == "")
+                        {
+                            flag = false;
+                        }
+                        else if (!IsNumeric(mssv.Trim()))
+
+                        {
+                            flag = false;
+                        }
+
+                        if (fname.Trim() == "")
+                        {
+                            flag = false;
+                        }
+                        else if (ContainsNumbers(fname))
+                        {
+                            flag = false;
+                        }
+
+                        if (lname.Trim() == "")
+                        {
+                            flag = false;
+                        }
+                        else if (ContainsNumbers(lname))
+                        {
+                            flag = false;
+                        }
+
+                        if (address.Trim() == "")
+                        {
+                            flag = false;
+                        }
+
+                        if (phone.Trim() == "")
+                        {
+                            flag = false;
+                        }
+                        else if (!IsNumeric(phone))
+                        {
+                            flag = false;
+                        }
+
+                        if (picture== null)
+                        {
+                            flag = false;
+                        }
 
                     DateTime bdate;
-                    if (DateTime.TryParse(bdatetemp?.ToString(), out bdate))
+                    if (flag == true)
                     {
-                        bdate = bdate.Date;
-                        dt.Rows.Add(mssv, fname, lname, bdate,gender,phone,address,picture);
+                        if (DateTime.TryParse(bdatetemp?.ToString(), out bdate))
+                        {
+                            bdate = bdate.Date;
+                            dt.Rows.Add(mssv, fname, lname, bdate, gender, phone, address, picture);
+                        }
+                        else
+                        {
+                            dt.Rows.Add(mssv, fname, lname, DBNull.Value, gender, phone, address, picture);
+                        }
                     }
                     else
                     {
-                        dt.Rows.Add(mssv, fname, lname, DBNull.Value, gender, phone, address,picture);
+                        MessageBox.Show("Lỗi dữ liệu!");
                     }
                 }
 
@@ -242,6 +297,16 @@ namespace QLSV
             StudentListForm_Load(sender, e);
 
         }
+        bool ContainsNumbers(string input)
+        {
+            return input.Any(char.IsDigit);
+        }
+
+        bool IsNumeric(string input)
+        {
+            return int.TryParse(input, out _);
+        }
+
     }
 }
 

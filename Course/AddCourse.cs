@@ -16,6 +16,7 @@ namespace QLSV
         public AddCourse()
         {
             InitializeComponent();
+            comboBox1.SelectedIndex = 0;
         }
 
         private void AddCourse_Load(object sender, EventArgs e)

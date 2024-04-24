@@ -50,11 +50,15 @@
             this.TextBoxLname = new System.Windows.Forms.TextBox();
             this.Label2 = new System.Windows.Forms.Label();
             this.TextBoxFname = new System.Windows.Forms.TextBox();
-            this.Label1 = new System.Windows.Forms.Label();
             this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
             this.buttonSelectContact = new System.Windows.Forms.Button();
+            this.errorProvider7 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider9 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider10 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider8 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
@@ -62,6 +66,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxEmail
@@ -272,17 +280,6 @@
             this.TextBoxFname.Size = new System.Drawing.Size(286, 36);
             this.TextBoxFname.TabIndex = 52;
             // 
-            // Label1
-            // 
-            this.Label1.AutoSize = true;
-            this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Label1.Location = new System.Drawing.Point(12, 54);
-            this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(123, 25);
-            this.Label1.TabIndex = 64;
-            this.Label1.Text = "First Name:";
-            // 
             // errorProvider4
             // 
             this.errorProvider4.ContainerControl = this;
@@ -309,6 +306,33 @@
             this.buttonSelectContact.Text = "SelectContact";
             this.buttonSelectContact.UseVisualStyleBackColor = false;
             this.buttonSelectContact.Click += new System.EventHandler(this.buttonSelectContact_Click);
+            // 
+            // errorProvider7
+            // 
+            this.errorProvider7.ContainerControl = this;
+            // 
+            // errorProvider9
+            // 
+            this.errorProvider9.ContainerControl = this;
+            // 
+            // errorProvider10
+            // 
+            this.errorProvider10.ContainerControl = this;
+            // 
+            // errorProvider8
+            // 
+            this.errorProvider8.ContainerControl = this;
+            // 
+            // Label1
+            // 
+            this.Label1.AutoSize = true;
+            this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Label1.Location = new System.Drawing.Point(12, 54);
+            this.Label1.Name = "Label1";
+            this.Label1.Size = new System.Drawing.Size(123, 25);
+            this.Label1.TabIndex = 64;
+            this.Label1.Text = "First Name:";
             // 
             // EditContact
             // 
@@ -346,6 +370,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,11 +401,15 @@
         internal System.Windows.Forms.TextBox TextBoxLname;
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.TextBox TextBoxFname;
-        internal System.Windows.Forms.Label Label1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ErrorProvider errorProvider3;
         private System.Windows.Forms.ErrorProvider errorProvider4;
         private System.Windows.Forms.ErrorProvider errorProvider5;
         private System.Windows.Forms.ErrorProvider errorProvider6;
+        private System.Windows.Forms.ErrorProvider errorProvider7;
+        private System.Windows.Forms.ErrorProvider errorProvider9;
+        private System.Windows.Forms.ErrorProvider errorProvider10;
+        private System.Windows.Forms.ErrorProvider errorProvider8;
+        internal System.Windows.Forms.Label Label1;
     }
 }

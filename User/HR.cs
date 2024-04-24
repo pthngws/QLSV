@@ -28,6 +28,26 @@ namespace QLSV
             return rowsAffected > 0;
 
         }
+        public bool updateHR(string id,string fname, string lname, MemoryStream picture)
+        {
+
+
+            SqlCommand command = new SqlCommand("UPDATE hr SET fname = @fn, lname = @ln,picture = @pic WHERE username = @id", mydb.getConnection);
+            mydb.openConnection();
+            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            command.Parameters.Add("@fn", SqlDbType.VarChar).Value = fname;
+            command.Parameters.Add("@ln", SqlDbType.VarChar).Value = lname;
+            command.Parameters.Add("@pic", SqlDbType.Image).Value = picture.ToArray();
+
+            if (command.ExecuteNonQuery() == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public bool deleteHR(string username)
         {
             mydb.closeConnection();
@@ -49,14 +69,16 @@ namespace QLSV
             sqlDataAdapter.Fill(dt);
             return dt;
         }
-        public DataTable getHR()
+        public DataTable getHRs(SqlCommand command)
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
-            DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("Select * from hr ", mydb.getConnection);
-            sqlDataAdapter.SelectCommand = cmd;
-            sqlDataAdapter.Fill(dt);
-            return dt;
+            command.Connection = mydb.getConnection;
+            mydb.closeConnection();
+            mydb.openConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable TABLE = new DataTable();
+            adapter.Fill(TABLE);
+            return TABLE;
+
         }
         public bool insertHR(string fname,string lname,string user,string pass,MemoryStream picture)
         {

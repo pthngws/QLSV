@@ -4,8 +4,10 @@
     "\\Course",
     "\\Result",
     "\\Score",
-    "\\Student"
+    "\\Score\\Report",
+    "\\Student",
+    "\\User"
   ],
-  "SelectedNode": "\\EditContact.cs",
+  "SelectedNode": "\\Score\\Report\\ReportScr.rdlc",
   "PreviewInSolutionExplorer": false
 }

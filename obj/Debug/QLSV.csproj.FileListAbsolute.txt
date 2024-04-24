@@ -168,3 +168,6 @@ C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.HRForm.resources
 C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.AddContactForm.resources
 C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.SelectContact.resources
 C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.EditContact.resources
+C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.HRShowFull.resources
+C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.ContactCourse.resources
+C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.EditIFHR.resources
