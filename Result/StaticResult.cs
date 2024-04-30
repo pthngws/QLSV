@@ -21,16 +21,22 @@ namespace QLSV
         private void StaticResult_Load(object sender, EventArgs e)
         {
             double total = Convert.ToDouble(totalStudent());
-            double totalpass = Convert.ToDouble(totalPass());
-            MessageBox.Show(totalStudent() + " " + totalPass());
+            double totalXuatSac = Convert.ToDouble(totalXS());
+            double totalKha = Convert.ToDouble(totalK());
+            double totalTrungBinh = Convert.ToDouble(totalTB());
 
             // Tính phần trăm học sinh nam và nữ
-            double PassStudentsPercentage = (totalpass * (100 / total));
-            double FailStudentsPercentage = 100 - PassStudentsPercentage;
+            double XSStudentsPercentage = (totalXuatSac * (100 / total));
+            double KStudentsPercentage = (totalKha * (100 / total));
+            double TBStudentsPercentage = (totalTrungBinh * (100 / total));
+            double YStudentsPercentage = 100 - XSStudentsPercentage - KStudentsPercentage - TBStudentsPercentage;
+/*            double FailStudentsPercentage = 100 - PassStudentsPercentage;*/
 
 
-            label1.Text = ("Pass: " + PassStudentsPercentage.ToString("0.00") + "%");
-            label2.Text = ("Fail " + FailStudentsPercentage.ToString("0.00") + "%");
+            label1.Text = ("Excellent: " + XSStudentsPercentage.ToString("0.00") + "%");
+            label2.Text = ("Good: " + KStudentsPercentage.ToString("0.00") + "%");
+            label5.Text = ("Average: " + TBStudentsPercentage.ToString("0.00") + "%");
+            label6.Text = ("Weak: " + YStudentsPercentage.ToString("0.00") + "%");
             ShowCourseLabels();
         }
         private void ShowCourseLabels()
@@ -108,10 +114,18 @@ namespace QLSV
         {
             return exeCount("Select count(*) from  std");
         }
-        public string totalPass()
+        public string totalXS()
+        {
+            return exeCount("SELECT COUNT(*) FROM (\r\n    SELECT studentID\r\n    FROM score\r\n    GROUP BY studentID\r\n    HAVING AVG(student_score) >= 8\r\n) as AA");
+        }
+        public string totalK()
+        {
+            return exeCount("SELECT COUNT(*) FROM (\r\n    SELECT studentID\r\n    FROM score\r\n    GROUP BY studentID\r\n    HAVING AVG(student_score) >= 6.5\r\n) as AA");
+        }
+        public string totalTB()
         {
             return exeCount("SELECT COUNT(*) FROM (\r\n    SELECT studentID\r\n    FROM score\r\n    GROUP BY studentID\r\n    HAVING AVG(student_score) >= 5\r\n) as AA");
+            
         }
-
     }
 }

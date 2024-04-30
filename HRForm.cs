@@ -149,8 +149,10 @@ namespace QLSV
             if(group.deleteGroup((string)comboBox1.SelectedValue))
             {
                 MessageBox.Show("Thanh cong");
-                HRForm_Load(sender, e);
-
+                HRForm_Load(sender,e);
+                textBoxGroupID.Text = string.Empty;
+                textBox3.Text = string.Empty;
+                textBoxGroupName.Text = string.Empty;
             }
         }
 
@@ -268,6 +270,11 @@ namespace QLSV
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             HRForm_Load(sender, e);
+            textBoxGroupName.Text = string.Empty;
+            textBoxID.Text = string.Empty;
+           textBoxGroupID.Text = string.Empty;
+            textBox3.Text = string.Empty;
+     
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -36,113 +36,123 @@ namespace QLSV
         {
             dataGridView1.DataSource = null;
             SqlCommand cmd;
-
-            // Kiểm tra xem chuỗi đầu vào có chứa số không
-            if (ContainsNumber(textBoxSearch.Text))
+            try
             {
-                // Nếu có chứa số, thực hiện truy vấn với điều kiện là id
-                cmd = new SqlCommand("SELECT id, fname, lname FROM std WHERE id = @searchTerm", mydb.getConnection);
-                // Chuyển đổi chuỗi thành số nguyên trước khi thêm vào tham số
-                int searchTermId = Convert.ToInt32(textBoxSearch.Text);
-                cmd.Parameters.AddWithValue("@searchTerm", searchTermId);
-            }
-            else
-            {
-                // Nếu không chứa số, thực hiện truy vấn với điều kiện là tên (tìm kiếm tương tự)
-                cmd = new SqlCommand("SELECT id, fname, lname FROM std WHERE CONCAT(fname, ' ', lname) LIKE '%' + @searchTerm + '%'", mydb.getConnection);
-                cmd.Parameters.AddWithValue("@searchTerm", textBoxSearch.Text);
-            }
-
-            // Tạo DataTable mới
-            DataTable dataTable = new DataTable();
-            // Thêm cột id vào DataTable
-            dataTable.Columns.Add("id", typeof(int));
-            dataTable.Columns.Add("fname", typeof(string));
-            dataTable.Columns.Add("lname", typeof(string));
-
-            mydb.openConnection();
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            // Lọc dữ liệu từ SqlDataReader dựa trên searchTerm
-            while (reader.Read())
-            {
-                // Tạo một hàng mới và thêm vào DataTable
-                DataRow row = dataTable.NewRow();
-                row["id"] = reader.GetInt32(0);
-                row["fname"] = reader.GetString(1);
-                row["lname"] = reader.GetString(2);
-                dataTable.Rows.Add(row);
-            }
-            mydb.closeConnection();
-
-            // Mở lại kết nối để thực hiện các truy vấn tiếp theo
-            mydb.openConnection();
-
-            // Thêm cột điểm vào DataTable
-            SqlCommand cmdScore = new SqlCommand("SELECT studentid, courseid, student_score FROM score", mydb.getConnection);
-            SqlDataReader readerScore = cmdScore.ExecuteReader();
-
-            while (readerScore.Read())
-            {
-                int studentId = readerScore.GetInt32(0);
-                string courseId = readerScore.GetString(1);
-                double scoreValue = readerScore.GetDouble(2);
-
-                // Tìm hàng tương ứng với studentId
-                DataRow[] rows = dataTable.Select($"id = '{studentId}'");
-                if (rows.Length > 0)
+                // Kiểm tra xem chuỗi đầu vào có chứa số không
+                if (ContainsNumber(textBoxSearch.Text))
                 {
-                    // Kiểm tra xem cột có tồn tại trong DataTable không
-                    if (dataTable.Columns.Contains(courseId))
-                    {
-                        // Thêm điểm vào cột tương ứng
-                        rows[0][courseId] = scoreValue;
-                    }
-                    else
-                    {
-                        // Tạo một cột mới với courseId và thêm điểm vào cột đó
-                        dataTable.Columns.Add(courseId, typeof(double));
-                        rows[0][courseId] = scoreValue;
-                    }
+                    // Nếu có chứa số, thực hiện truy vấn với điều kiện là id
+                    cmd = new SqlCommand("SELECT id, fname, lname FROM std WHERE id = @searchTerm", mydb.getConnection);
+                    // Chuyển đổi chuỗi thành số nguyên trước khi thêm vào tham số
+
+                    int searchTermId = Convert.ToInt32(textBoxSearch.Text);
+                    cmd.Parameters.AddWithValue("@searchTerm", searchTermId);
                 }
-               
-            }
-            readerScore.Close();
 
-            dataTable.Columns.Add("AverageScore", typeof(double));
-            dataTable.Columns.Add("Result", typeof(string));
 
-            // Tính điểm trung bình và đánh giá kết quả
-            foreach (DataRow row in dataTable.Rows)
-            {
-                double sumScores = 0;
-                int countScores = 0;
-
-                // Tính tổng điểm của từng sinh viên
-                foreach (DataColumn column in dataTable.Columns)
+                else
                 {
-                    // Kiểm tra nếu tên cột là course id (nghĩa là đây là cột điểm)
-                    if (column.ColumnName != "id" && column.ColumnName != "fname" && column.ColumnName != "lname" && column.ColumnName != "AverageScore" && column.ColumnName != "Result")
+                    // Nếu không chứa số, thực hiện truy vấn với điều kiện là tên (tìm kiếm tương tự)
+                    cmd = new SqlCommand("SELECT id, fname, lname FROM std WHERE CONCAT(fname, ' ', lname) LIKE '%' + @searchTerm + '%'", mydb.getConnection);
+                    cmd.Parameters.AddWithValue("@searchTerm", textBoxSearch.Text);
+                }
+
+
+                // Tạo DataTable mới
+                DataTable dataTable = new DataTable();
+                // Thêm cột id vào DataTable
+                dataTable.Columns.Add("id", typeof(int));
+                dataTable.Columns.Add("fname", typeof(string));
+                dataTable.Columns.Add("lname", typeof(string));
+
+                mydb.openConnection();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                // Lọc dữ liệu từ SqlDataReader dựa trên searchTerm
+                while (reader.Read())
+                {
+                    // Tạo một hàng mới và thêm vào DataTable
+                    DataRow row = dataTable.NewRow();
+                    row["id"] = reader.GetInt32(0);
+                    row["fname"] = reader.GetString(1);
+                    row["lname"] = reader.GetString(2);
+                    dataTable.Rows.Add(row);
+                }
+                mydb.closeConnection();
+
+                // Mở lại kết nối để thực hiện các truy vấn tiếp theo
+                mydb.openConnection();
+
+                // Thêm cột điểm vào DataTable
+                SqlCommand cmdScore = new SqlCommand("SELECT studentid, courseid, student_score FROM score", mydb.getConnection);
+                SqlDataReader readerScore = cmdScore.ExecuteReader();
+
+                while (readerScore.Read())
+                {
+                    int studentId = readerScore.GetInt32(0);
+                    string courseId = readerScore.GetString(1);
+                    double scoreValue = readerScore.GetDouble(2);
+
+                    // Tìm hàng tương ứng với studentId
+                    DataRow[] rows = dataTable.Select($"id = '{studentId}'");
+                    if (rows.Length > 0)
                     {
-                        if (row[column] != DBNull.Value)
+                        // Kiểm tra xem cột có tồn tại trong DataTable không
+                        if (dataTable.Columns.Contains(courseId))
                         {
-                            sumScores += Convert.ToDouble(row[column]);
-                            countScores++;
+                            // Thêm điểm vào cột tương ứng
+                            rows[0][courseId] = scoreValue;
+                        }
+                        else
+                        {
+                            // Tạo một cột mới với courseId và thêm điểm vào cột đó
+                            dataTable.Columns.Add(courseId, typeof(double));
+                            rows[0][courseId] = scoreValue;
                         }
                     }
+
+                }
+                readerScore.Close();
+
+                dataTable.Columns.Add("AverageScore", typeof(double));
+                dataTable.Columns.Add("Result", typeof(string));
+
+                // Tính điểm trung bình và đánh giá kết quả
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    double sumScores = 0;
+                    int countScores = 0;
+
+                    // Tính tổng điểm của từng sinh viên
+                    foreach (DataColumn column in dataTable.Columns)
+                    {
+                        // Kiểm tra nếu tên cột là course id (nghĩa là đây là cột điểm)
+                        if (column.ColumnName != "id" && column.ColumnName != "fname" && column.ColumnName != "lname" && column.ColumnName != "AverageScore" && column.ColumnName != "Result")
+                        {
+                            if (row[column] != DBNull.Value)
+                            {
+                                sumScores += Convert.ToDouble(row[column]);
+                                countScores++;
+                            }
+                        }
+                    }
+
+                    // Tính điểm trung bình
+                    double averageScore = countScores > 0 ? sumScores / countScores : 0;
+                    row["AverageScore"] = averageScore;
+
+                    // Đánh giá kết quả
+                    row["Result"] = averageScore >= 5 ? "Pass" : "Fail";
                 }
 
-                // Tính điểm trung bình
-                double averageScore = countScores > 0 ? sumScores / countScores : 0;
-                row["AverageScore"] = averageScore;
+                mydb.closeConnection();
 
-                // Đánh giá kết quả
-                row["Result"] = averageScore >= 5 ? "Pass" : "Fail";
+                dataGridView1.DataSource = dataTable;
             }
-
-            mydb.closeConnection();
-
-            dataGridView1.DataSource = dataTable;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui long nhap gia tri hop le");
+            }
         }
 
 
@@ -443,5 +453,24 @@ namespace QLSV
             }
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBoxID.Text = dataGridView1.CurrentRow.Cells[0].Value?.ToString() ?? null;
+            textBoxFname.Text = dataGridView1.CurrentRow.Cells[1].Value?.ToString() ?? null;
+            textBoxLname.Text = dataGridView1.CurrentRow.Cells[2].Value?.ToString() ?? null;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            printDialog1 = new PrintDialog();
+            printDocument1.DocumentName = " Print Document";
+            printDialog1.Document = printDocument1;
+            printDialog1.AllowSelection = true;
+            printDialog1.AllowSomePages = true;
+            if (printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                printDocument1.Print();
+            }
+        }
     }
 }

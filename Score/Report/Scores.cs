@@ -10,7 +10,7 @@ namespace QLSV
 {
     internal class Scores
     {
-        public string studentID { get; set; }
+        public int studentID { get; set; }
 
 
         public string courseID { get; set; }

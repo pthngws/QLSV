@@ -111,6 +111,11 @@
     <Compile Include="AddContactForm.Designer.cs">
       <DependentUpon>AddContactForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaiTapWinformDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaiTapWinformDataSet14.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EditIFHR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -630,6 +635,17 @@
     </None>
     <None Include="BaiTapWinformDataSet13.xss">
       <DependentUpon>BaiTapWinformDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet14.xsc">
+      <DependentUpon>BaiTapWinformDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaiTapWinformDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaiTapWinformDataSet14.xss">
+      <DependentUpon>BaiTapWinformDataSet14.xsd</DependentUpon>
     </None>
     <None Include="BaiTapWinformDataSet2.xsc">
       <DependentUpon>BaiTapWinformDataSet2.xsd</DependentUpon>

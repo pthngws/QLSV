@@ -10,8 +10,7 @@ namespace QLSV
     public partial class Scr
     {
         [Key]
-        [StringLength(50)]
-        public string studentID { get; set; }
+        public int studentID { get; set; }
 
         [StringLength(50)]
         public string courseID { get; set; }

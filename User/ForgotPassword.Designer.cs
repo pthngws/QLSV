@@ -41,7 +41,7 @@
             // 
             // buttonSendOTP
             // 
-            this.buttonSendOTP.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonSendOTP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.buttonSendOTP.Font = new System.Drawing.Font("Segoe Script", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSendOTP.ForeColor = System.Drawing.Color.Black;
             this.buttonSendOTP.Location = new System.Drawing.Point(404, 111);
@@ -98,7 +98,7 @@
             // 
             // buttonVerify
             // 
-            this.buttonVerify.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonVerify.BackColor = System.Drawing.Color.Blue;
             this.buttonVerify.Font = new System.Drawing.Font("Segoe Script", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVerify.ForeColor = System.Drawing.Color.Black;
             this.buttonVerify.Location = new System.Drawing.Point(272, 230);
@@ -117,6 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Cyan;
             this.ClientSize = new System.Drawing.Size(608, 358);
             this.Controls.Add(this.buttonVerify);
             this.Controls.Add(this.buttonSendOTP);

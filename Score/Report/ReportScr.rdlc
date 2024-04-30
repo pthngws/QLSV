@@ -485,27 +485,30 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="studentID">
+          <DataField>studentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="courseID">
           <DataField>courseID</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="student_score">
+          <DataField>student_score</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
         <Field Name="description">
           <DataField>description</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="student_score">
-          <DataField>student_score</DataField>
-          <rd:TypeName>System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
-        </Field>
-        <Field Name="studentID">
-          <DataField>studentID</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>QLSV</rd:DataSetName>
-        <rd:TableName>Scr</rd:TableName>
-        <rd:ObjectDataSourceType>QLSV.Scr, QLSV, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:DataSetName>BaiTapWinformDataSet14</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\thang\source\repos\pthngws\QLSV\BaiTapWinformDataSet14.xsd</rd:SchemaPath>
+        <rd:TableName>Score</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>ScoreTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
