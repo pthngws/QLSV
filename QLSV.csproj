@@ -116,6 +116,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BaiTapWinformDataSet14.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BaiTapWinformDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaiTapWinformDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetAVG.cs">
+      <DependentUpon>DataSetAVG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetAVG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetAVG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsScoreOfStudent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsScoreOfStudent.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EditIFHR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +171,12 @@
     </Compile>
     <Compile Include="HRShowFull.Designer.cs">
       <DependentUpon>HRShowFull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportAvg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportAvg.Designer.cs">
+      <DependentUpon>ReportAvg.cs</DependentUpon>
     </Compile>
     <Compile Include="Result\AVGResultByScore.cs">
       <SubType>Form</SubType>
@@ -201,6 +225,18 @@
     </Compile>
     <Compile Include="Result\StaticResult.Designer.cs">
       <DependentUpon>StaticResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreOfStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScoreOfStudent.Designer.cs">
+      <DependentUpon>ScoreOfStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreOfStudentRP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScoreOfStudentRP.Designer.cs">
+      <DependentUpon>ScoreOfStudentRP.cs</DependentUpon>
     </Compile>
     <Compile Include="SelectContact.cs">
       <SubType>Form</SubType>
@@ -452,6 +488,11 @@
     <EmbeddedResource Include="HRShowFull.resx">
       <DependentUpon>HRShowFull.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="ReportAvg.resx">
+      <DependentUpon>ReportAvg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Result\AVGResultByScore.resx">
       <DependentUpon>AVGResultByScore.cs</DependentUpon>
     </EmbeddedResource>
@@ -460,6 +501,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Course\AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoreOfStudent.resx">
+      <DependentUpon>ScoreOfStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoreOfStudentRP.resx">
+      <DependentUpon>ScoreOfStudentRP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Score\Report\ReportScr.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -647,6 +694,17 @@
     <None Include="BaiTapWinformDataSet14.xss">
       <DependentUpon>BaiTapWinformDataSet14.xsd</DependentUpon>
     </None>
+    <None Include="BaiTapWinformDataSet15.xsc">
+      <DependentUpon>BaiTapWinformDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="BaiTapWinformDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaiTapWinformDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaiTapWinformDataSet15.xss">
+      <DependentUpon>BaiTapWinformDataSet15.xsd</DependentUpon>
+    </None>
     <None Include="BaiTapWinformDataSet2.xsc">
       <DependentUpon>BaiTapWinformDataSet2.xsd</DependentUpon>
     </None>
@@ -734,6 +792,28 @@
     </None>
     <None Include="BaiTapWinformDataSet9.xss">
       <DependentUpon>BaiTapWinformDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetAVG.xsc">
+      <DependentUpon>DataSetAVG.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetAVG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAVG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetAVG.xss">
+      <DependentUpon>DataSetAVG.xsd</DependentUpon>
+    </None>
+    <None Include="dsScoreOfStudent.xsc">
+      <DependentUpon>dsScoreOfStudent.xsd</DependentUpon>
+    </None>
+    <None Include="dsScoreOfStudent.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsScoreOfStudent.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsScoreOfStudent.xss">
+      <DependentUpon>dsScoreOfStudent.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Course.datasource" />

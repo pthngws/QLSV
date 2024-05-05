@@ -24,7 +24,7 @@ namespace QLSV
 
 
             Contact contact = new Contact();
-            SqlCommand command = new SqlCommand("SELECT  id ,  fname  as'first name',  lname  as 'last name',  groupid  as'group id' FROM  contact  WHERE  userid  = @uid");
+            SqlCommand command = new SqlCommand("SELECT  id ID,  fname  as'First Name',  lname  as 'Last Name',  groupid  as'Group ID' FROM  contact  WHERE  userid  = @uid");
             command.Parameters.Add("@uid", SqlDbType.VarChar).Value = Global.GlobalUserID;
             dataGridView1.DataSource = contact.SelectContactList(command);
         }

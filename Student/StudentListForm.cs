@@ -157,6 +157,7 @@ namespace QLSV
                     string phone = worksheet.Cells[i, j++].Value?.ToString();
                     string address = worksheet.Cells[i, j++].Value?.ToString();
                     string picture = worksheet.Cells[i, j++].Value?.ToString();
+                    DateTime bdate;
                     bool flag = true;
                         
 
@@ -201,13 +202,35 @@ namespace QLSV
                         {
                             flag = false;
                         }
-
+                        if(gender == "" || (gender !="Male"&&gender !="Female"))
+                        {
+                        flag = false;
+                        }    
                         if (picture== null)
                         {
                             flag = false;
                         }
-
-                    DateTime bdate;
+                        
+                        if (!string.IsNullOrEmpty(bdatetemp?.ToString()))
+                    {
+                        if (DateTime.TryParse(bdatetemp.ToString(), out bdate))
+                        {
+                            // Kiểm tra năm hợp lệ (trong khoảng từ 10 đến 100)
+                            int year = DateTime.Now.Year - bdate.Year;
+                            if (year < 10 || year > 100)
+                            {
+                                flag = false;
+                            }
+                        }
+                        else
+                        {
+                            flag = false; // Ngày tháng không hợp lệ
+                        }
+                    }
+                    else
+                    {
+                        flag = false; // Chuỗi ngày tháng rỗng
+                    }
                     if (flag == true)
                     {
                         if (DateTime.TryParse(bdatetemp?.ToString(), out bdate))

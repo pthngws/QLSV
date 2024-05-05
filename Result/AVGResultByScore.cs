@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Input;
+using static QLSV.BaiTapWinformDataSet13;
 
 namespace QLSV
 {
@@ -59,11 +60,11 @@ namespace QLSV
 
 
                 // Tạo DataTable mới
-                DataTable dataTable = new DataTable();
+                DataTable dataTable = new DataTable();  
                 // Thêm cột id vào DataTable
-                dataTable.Columns.Add("id", typeof(int));
-                dataTable.Columns.Add("fname", typeof(string));
-                dataTable.Columns.Add("lname", typeof(string));
+                dataTable.Columns.Add("MSSV", typeof(int));
+                dataTable.Columns.Add("Họ", typeof(string));
+                dataTable.Columns.Add("Tên", typeof(string));
 
                 mydb.openConnection();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -73,9 +74,9 @@ namespace QLSV
                 {
                     // Tạo một hàng mới và thêm vào DataTable
                     DataRow row = dataTable.NewRow();
-                    row["id"] = reader.GetInt32(0);
-                    row["fname"] = reader.GetString(1);
-                    row["lname"] = reader.GetString(2);
+                    row["MSSV"] = reader.GetInt32(0);
+                    row["Họ"] = reader.GetString(1);
+                    row["Tên"] = reader.GetString(2);
                     dataTable.Rows.Add(row);
                 }
                 mydb.closeConnection();
@@ -94,7 +95,7 @@ namespace QLSV
                     double scoreValue = readerScore.GetDouble(2);
 
                     // Tìm hàng tương ứng với studentId
-                    DataRow[] rows = dataTable.Select($"id = '{studentId}'");
+                    DataRow[] rows = dataTable.Select($"MSSV = '{studentId}'");
                     if (rows.Length > 0)
                     {
                         // Kiểm tra xem cột có tồn tại trong DataTable không
@@ -127,7 +128,7 @@ namespace QLSV
                     foreach (DataColumn column in dataTable.Columns)
                     {
                         // Kiểm tra nếu tên cột là course id (nghĩa là đây là cột điểm)
-                        if (column.ColumnName != "id" && column.ColumnName != "fname" && column.ColumnName != "lname" && column.ColumnName != "AverageScore" && column.ColumnName != "Result")
+                        if (column.ColumnName != "MSSV" && column.ColumnName != "Họ" && column.ColumnName != "Tên" && column.ColumnName != "AverageScore" && column.ColumnName != "Result")
                         {
                             if (row[column] != DBNull.Value)
                             {
@@ -151,7 +152,7 @@ namespace QLSV
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Vui long nhap gia tri hop le");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -308,9 +309,9 @@ namespace QLSV
             SqlCommand cmd = new SqlCommand("SELECT id, fname, lname FROM std", mydb.getConnection);
             mydb.openConnection();
             SqlDataReader reader = cmd.ExecuteReader();
-
-            // Tạo DataTable mới
             DataTable dataTable = new DataTable();
+            // Tạo DataTable mới
+            dataTable = new DataTable();
 
             // Thêm cột id vào DataTable
             dataTable.Columns.Add("id", typeof(int));
@@ -460,17 +461,79 @@ namespace QLSV
             textBoxLname.Text = dataGridView1.CurrentRow.Cells[2].Value?.ToString() ?? null;
         }
 
+
         private void button2_Click(object sender, EventArgs e)
         {
-            printDialog1 = new PrintDialog();
-            printDocument1.DocumentName = " Print Document";
-            printDialog1.Document = printDocument1;
-            printDialog1.AllowSelection = true;
-            printDialog1.AllowSomePages = true;
-            if (printDialog1.ShowDialog() == DialogResult.OK)
-            {
-                printDocument1.Print();
-            }
+            printPreviewDialog1.ShowDialog();
+
+
         }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            // Thêm tiêu đề
+            // Thêm tiêu đề
+            string title = "TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT TP.HCM";
+            Font titleFont = new Font("Arial", 22, FontStyle.Bold);
+            SizeF titleSize = e.Graphics.MeasureString(title, titleFont);
+            int titleX = (e.PageBounds.Width - (int)titleSize.Width) / 2; // Căn giữa theo trục X
+            int titleY = 50; // Đặt ở phía trên cùng
+            e.Graphics.DrawString(title, titleFont, Brushes.Black, new PointF(titleX, titleY));
+
+            Font XFont = new Font("Arial", 15, FontStyle.Bold);
+            float newTitleY = titleY + titleSize.Height + 100; // 10 là khoảng cách giữa hai dòng
+            string newTitle = "DANH SÁCH ĐIỂM"; // Đặt nội dung của title mới ở đây
+            SizeF newTitleSize = e.Graphics.MeasureString(newTitle, XFont);
+            int newTitleX = (e.PageBounds.Width - (int)newTitleSize.Width) / 2; // Căn giữa theo trục X
+
+            // Vẽ title mới
+            e.Graphics.DrawString(newTitle, titleFont, Brushes.Black, new PointF(newTitleX, newTitleY));
+
+            // Tăng độ phân giải DPI và thiết lập các thuộc tính khác
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            e.Graphics.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+
+            int rowHeight = dataGridView1.RowTemplate.Height;
+            int numRowsToShow = dataGridView1.Height / rowHeight;
+
+            // Tính toán chiều cao thực tế của ảnh bitmap
+            int bitmapHeight = Math.Min(dataGridView1.RowCount, numRowsToShow) * rowHeight;
+
+            // Tạo ảnh bitmap chỉ với phần dữ liệu hiển thị trên DataGridView
+            Bitmap bitmap = new Bitmap(dataGridView1.Width, bitmapHeight);
+            dataGridView1.DrawToBitmap(bitmap, new Rectangle(0, 0, dataGridView1.Width, bitmapHeight));
+
+            // Định nghĩa kích thước và vị trí cho dữ liệu được in trên trang
+            int x = (e.PageBounds.Width - dataGridView1.Width) / 2; // Căn giữa theo trục X
+            int y = (e.PageBounds.Height - dataGridView1.Height) / 2; // Căn giữa theo trục Y
+            e.Graphics.DrawImage(bitmap, x, y);
+
+            // Tạo chuỗi ngày tháng năm
+            string ngay = "NGÀY " + DateTime.Now.Day.ToString("00");
+            string thang = " THÁNG " + DateTime.Now.Month.ToString("00");
+            string nam = " NĂM " + DateTime.Now.Year.ToString();
+            string date = "TP.HCM, " + ngay + thang + nam;
+
+            Font dateFont = new Font("Arial", 10, FontStyle.Italic);
+            SizeF dateSize = e.Graphics.MeasureString(date, dateFont);
+            int dateX = e.PageBounds.Width - (int)dateSize.Width - 50;
+            int dateY = e.PageBounds.Height - 100; // Đặt ở phía dưới cùng
+            e.Graphics.DrawString(date, dateFont, Brushes.Black, new PointF(dateX, dateY));
+
+            // Hiển thị dòng "Trưởng khoa công nghệ thông tin" bên dưới ngày tháng năm
+            string departmentHead = "TRƯỞNG KHOA CÔNG NGHỆ THÔNG TIN";
+            Font departmentFont = new Font("Arial", 12, FontStyle.Bold);
+            SizeF departmentSize = e.Graphics.MeasureString(departmentHead, departmentFont);
+            int departmentX = e.PageBounds.Width - (int)departmentSize.Width - 30;
+            int departmentY = dateY + 20; // Đặt bên dưới ngày tháng năm
+            e.Graphics.DrawString(departmentHead, departmentFont, Brushes.Black, new PointF(departmentX, departmentY));
+
+            // Kết thúc trang in
+            e.HasMorePages = false;
+
+        }
+
     }
 }

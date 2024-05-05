@@ -174,5 +174,11 @@ namespace QLSV
             StaticResult staticResult = new StaticResult();
             staticResult.Show();
         }
+
+        private void sCOREOFSTUDENTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ScoreOfStudent scoreOfStudent = new ScoreOfStudent();
+            scoreOfStudent.Show();
+        }
     }
 }

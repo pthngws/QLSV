@@ -26,19 +26,19 @@ namespace QLSV
             double totalTrungBinh = Convert.ToDouble(totalTB());
 
             // Tính phần trăm học sinh nam và nữ
-            double XSStudentsPercentage = (totalXuatSac * (100 / total));
-            double KStudentsPercentage = (totalKha * (100 / total));
-            double TBStudentsPercentage = (totalTrungBinh * (100 / total));
+            double XSStudentsPercentage = Math.Round((totalXuatSac / total) * 100, 1);
+            double KStudentsPercentage = Math.Round((totalKha / total) * 100, 1);
+            double TBStudentsPercentage = Math.Round((totalTrungBinh / total) * 100, 1);
             double YStudentsPercentage = 100 - XSStudentsPercentage - KStudentsPercentage - TBStudentsPercentage;
-/*            double FailStudentsPercentage = 100 - PassStudentsPercentage;*/
 
-
-            label1.Text = ("Excellent: " + XSStudentsPercentage.ToString("0.00") + "%");
-            label2.Text = ("Good: " + KStudentsPercentage.ToString("0.00") + "%");
-            label5.Text = ("Average: " + TBStudentsPercentage.ToString("0.00") + "%");
-            label6.Text = ("Weak: " + YStudentsPercentage.ToString("0.00") + "%");
+            label1.Text = ("Excellent: " + XSStudentsPercentage.ToString("0.0") + "%");
+            label2.Text = ("Good: " + KStudentsPercentage.ToString("0.0") + "%");
+            label5.Text = ("Average: " + TBStudentsPercentage.ToString("0.0") + "%");
+            label6.Text = ("Weak: " + YStudentsPercentage.ToString("0.0") + "%");
             ShowCourseLabels();
         }
+
+
         private void ShowCourseLabels()
         {
             // Lấy danh sách các courseID và avg score từ cơ sở dữ liệu

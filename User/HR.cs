@@ -82,11 +82,12 @@ namespace QLSV
         }
         public bool insertHR(string fname,string lname,string user,string pass,MemoryStream picture)
         {
-            SqlCommand cmd = new SqlCommand("insert into hr (fname,lname,username,password,picture) values (@fn,@ln,@un,@pw,@img)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("insert into hr (fname,lname,username,password,picture,status) values (@fn,@ln,@un,@pw,@img,@stt)", mydb.getConnection);
             cmd.Parameters.AddWithValue("@fn", fname);
             cmd.Parameters.AddWithValue("@ln", lname);
             cmd.Parameters.AddWithValue("@un", user);
             cmd.Parameters.AddWithValue("@pw", pass);
+            cmd.Parameters.AddWithValue("@stt", "Dang cho");
             cmd.Parameters.Add("@img", SqlDbType.Image).Value = picture.ToArray();
             mydb.openConnection();
 

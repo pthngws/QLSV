@@ -171,3 +171,6 @@ C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.EditContact.resources
 C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.HRShowFull.resources
 C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.ContactCourse.resources
 C:\Users\thang\Source\Repos\pthngws\QLSV\obj\Debug\QLSV.EditIFHR.resources
+C:\Users\thang\source\repos\pthngws\QLSV\obj\Debug\QLSV.ScoreOfStudent.resources
+C:\Users\thang\source\repos\pthngws\QLSV\obj\Debug\QLSV.ScoreOfStudentRP.resources
+C:\Users\thang\source\repos\pthngws\QLSV\obj\Debug\QLSV.ReportAvg.resources

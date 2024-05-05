@@ -70,6 +70,7 @@
             this.rESULTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aVGRESULTBYSCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sTATICRESULTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sCOREOFSTUDENTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -419,7 +420,8 @@
             // 
             this.rESULTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aVGRESULTBYSCOREToolStripMenuItem,
-            this.sTATICRESULTToolStripMenuItem});
+            this.sTATICRESULTToolStripMenuItem,
+            this.sCOREOFSTUDENTToolStripMenuItem});
             this.rESULTToolStripMenuItem.Name = "rESULTToolStripMenuItem";
             this.rESULTToolStripMenuItem.Size = new System.Drawing.Size(117, 31);
             this.rESULTToolStripMenuItem.Text = "RESULT";
@@ -437,6 +439,13 @@
             this.sTATICRESULTToolStripMenuItem.Size = new System.Drawing.Size(374, 32);
             this.sTATICRESULTToolStripMenuItem.Text = "STATIC RESULT";
             this.sTATICRESULTToolStripMenuItem.Click += new System.EventHandler(this.sTATICRESULTToolStripMenuItem_Click);
+            // 
+            // sCOREOFSTUDENTToolStripMenuItem
+            // 
+            this.sCOREOFSTUDENTToolStripMenuItem.Name = "sCOREOFSTUDENTToolStripMenuItem";
+            this.sCOREOFSTUDENTToolStripMenuItem.Size = new System.Drawing.Size(374, 32);
+            this.sCOREOFSTUDENTToolStripMenuItem.Text = "SCORE OF STUDENT";
+            this.sCOREOFSTUDENTToolStripMenuItem.Click += new System.EventHandler(this.sCOREOFSTUDENTToolStripMenuItem_Click);
             // 
             // MainForm01
             // 
@@ -503,5 +512,6 @@
         private System.Windows.Forms.ToolStripMenuItem rESULTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aVGRESULTBYSCOREToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sTATICRESULTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sCOREOFSTUDENTToolStripMenuItem;
     }
 }
